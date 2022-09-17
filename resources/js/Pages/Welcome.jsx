@@ -27,7 +27,7 @@ export default function Welcome(props) {
                     )}
                 </div>
 
-                
+
             </div>
         </>
     );
