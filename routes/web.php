@@ -16,7 +16,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Index', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -27,5 +27,43 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('blog', function () {
+    return Inertia::render('Blog');
+})->name('blog');
+
+Route::get('talents', function () {
+    return Inertia::render('Talents');
+})->name('talents');
+
+Route::get('about', function () {
+    return Inertia::render('About');
+})->name('about');
+
+Route::get('vets', function () {
+    return Inertia::render('Vet/Index');
+})->name('vets');
+
+Route::get('create', function () {
+    return Inertia::render('Vet/Create');
+})->name('create');
+
+Route::get('edit', function () {
+    return Inertia::render('Vet/Edit');
+})->name('edit');
+
+Route::get('results', function () {
+    return Inertia::render('Vet/Results');
+})->name('results');
+
+Route::get('resultview', function () {
+    return Inertia::render('Vet/ResultView');
+})->name('resultview');
+
+
+Route::get('vetting', function () {
+    return Inertia::render('Vet/Vetting');
+})->name('vetting');
+
 
 require __DIR__.'/auth.php';

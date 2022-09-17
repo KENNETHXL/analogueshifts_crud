@@ -1,0 +1,21 @@
+
+.footer{
+    @apply p-5 md:p-20 bg-zinc-200 text-zinc-300;
+
+    .wrapper{
+        @apply flex flex-col-reverse md:grid grid-cols-4 gap-20;
+
+        .logo{
+            @apply text-4xl md:text-xl font-bold uppercase 
+                text-zinc-600 leading-9 md:leading-5;
+        }
+    }
+
+    .menu{
+        @apply md:col-span-3 space-y-10 md:space-y-0 md:grid text-xl 
+            md:text-base grid-cols-4 gap-10;
+        a{@apply block hover:underline text-zinc-500;}
+        li{@apply font-bold md:mb-3 text-zinc-400 list-none;}
+    }
+
+}

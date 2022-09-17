@@ -1,0 +1,50 @@
+.navbar{
+
+    @apply grid items-center h-[100px] fixed top-0 left-0 px-5  w-full z-[100] bg-white;
+
+    .wrapper{
+        @apply w-[95%] mx-auto flex items-center justify-between gap-10 h-full;
+
+        .logo {
+            @apply flex items-center gap-3 text-zinc-300;
+            z-index: 99;
+            p{
+                @apply text-4xl font-semibold; 
+                letter-spacing: 20px;
+
+                &:first-child{
+                    @apply text-lg;
+                    letter-spacing: 5px;
+                }
+            }
+        }
+
+        .close-btn {
+            @apply text-4xl outline-none text-gray-500; 
+            z-index:99;
+        }
+
+        .nav-menu{
+
+            @apply fixed top-0 h-screen bg-white ml-auto tracking-widest
+                items-start justify-center gap-1 flex-col font-light p-5 md:pt-16 flex;
+                left: -300px;
+
+                a{
+                    @apply text-lg capitalize font-medium hover:pl-5 py-3 hover:border-l-8 w-full
+                        hover:border-yellow-400 hover:text-yellow-400;
+                    &.find-btn{
+                        @apply bg-yellow-400 text-black text-center rounded-lg;
+                    }
+                }
+        }
+    }
+
+    &.active{
+        @apply ring-1 ring-zinc-300 bg-white;
+        .nav-menu {
+            @apply left-0;
+            a{@apply text-zinc-700;}
+        }
+    }
+}
