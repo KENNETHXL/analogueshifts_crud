@@ -1,6 +1,8 @@
 
 .home{
     
+    @apply px-3 md:px-5 py-16 min-h-screen;
+
     .build-team{
         @apply grid justify-center p-3 md:p-9 pt-20 space-y-16;
 

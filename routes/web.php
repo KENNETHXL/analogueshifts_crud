@@ -52,13 +52,13 @@ Route::get('edit', function () {
     return Inertia::render('Vet/Edit');
 })->name('edit');
 
-Route::get('results', function () {
-    return Inertia::render('Vet/Results');
-})->name('results');
+Route::get('response', function () {
+    return Inertia::render('Vet/Response');
+})->name('response');
 
-Route::get('resultview', function () {
-    return Inertia::render('Vet/ResultView');
-})->name('resultview');
+Route::get('result', function () {
+    return Inertia::render('Vet/Result');
+})->name('result');
 
 
 Route::get('vetting', function () {

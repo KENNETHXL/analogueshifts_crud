@@ -2,7 +2,7 @@ import React from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/inertia-react';
 
-export default function ResultView(props) {
+export default function Result(props) {
     return (
         <AuthenticatedLayout
             auth={props.auth}
