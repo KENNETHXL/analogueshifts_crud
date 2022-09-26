@@ -28,6 +28,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/profile', function () {
+    return Inertia::render('Profile');
+})->middleware(['auth', 'verified'])->name('profile');
+
+Route::get('/package', function () {
+    return Inertia::render('Package');
+})->middleware(['auth', 'verified'])->name('package');
+
 Route::get('blog', function () {
     return Inertia::render('Blog');
 })->name('blog');

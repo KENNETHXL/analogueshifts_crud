@@ -4,10 +4,12 @@ import NavLink from '@/Components/Utils/NavLink';
 import { Link } from '@inertiajs/inertia-react';
 import {GrClose} from 'react-icons/gr';
 import {MdMenu} from 'react-icons/md';
-import {BsLock} from 'react-icons/bs'
+import {BsLock, BsUnlock} from 'react-icons/bs'
+
 
 function Navbar({auth}) {
 
+    // const {auth} = usePage().props;
     const navRef = useRef();
     const [open, setOpen] = useState(false);
 
@@ -15,34 +17,25 @@ function Navbar({auth}) {
     return ( 
         <nav ref={navRef} className={"navbar "+(open && 'active')}> 
             <div className="wrapper">
-                <a href="/" className="logo">
+                <Link href="/" className="logo">
                     <img src="logo.png" className="w-12 h-12" alt="" />
                     <h3 className="md:text-xl text-lg font-bold uppercase text-zinc-600 leading-5">
                         <span className="tracking-widest text-yellow-400">Analogue</span> 
                         <br />
                         <span className="tracking-[1rem]">Shifts</span>
                     </h3>
-                </a>
+                </Link>
 
                 <div className="flex gap-3 items-center">
-                    {/* {props.auth.user ? ( */}
+                    {auth ? (
                         <Link className="border rounded-full p-3 text-gray-700 hover:text-red-500" href={route('logout')} method="post" as="button">
                             <BsLock className="text-xl"/>
                         </Link>
-                    {/* ) : (
-                        <>
-                            <a href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
-                                <BsLock className="text-xl"/>
-                            </a>
-
-                            <Link
-                                href={route('register')}
-                                className="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"
-                            >
-                                Register
-                            </Link>
-                        </>
-                    )} */}
+                    ) : (
+                        <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
+                            <BsUnlock className="text-xl"/>
+                        </Link>
+                    )}
                     <button onClick={() => setOpen(!open)} className="close-btn">
                         {open ? <GrClose /> : <MdMenu />}
                     </button>

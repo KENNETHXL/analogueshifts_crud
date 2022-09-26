@@ -6,7 +6,7 @@ export default function Talents(props) {
     return (
         <All>
             <Head title="Welcome" />
-            <div className="home">
+            <div className="home py-16 px-2">
                 
                 
                 <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md relative">
@@ -19,20 +19,20 @@ export default function Talents(props) {
                         <div id="dropdown" className=" z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 absolute">
                             <ul className="py-1">
                             <li>
-                                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Share</a>
                             </li>
                             <li>
-                                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export Data</a>
+                                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Vet</a>
                             </li>
                             <li>
-                                <a href="#" className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                <a href="#" className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Report</a>
                             </li>
                             </ul>
                         </div>
                     </div>
                     <div className="flex flex-col items-center pb-10">
-                        <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src="images/ceo.jpeg" alt="Bonnie image"/>
-                        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
+                        <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src="images/ceo.jpeg" alt="Kenneth Malaka"/>
+                        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">Kenneth Malaka</h5>
                         <span className="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
                         <div className="flex mt-4 space-x-3 md:mt-6">
                             <a href="#" className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-yellow-700 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Hire Talent</a>
