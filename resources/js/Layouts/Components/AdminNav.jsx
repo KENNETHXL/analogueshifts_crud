@@ -5,10 +5,9 @@ import { Link } from '@inertiajs/inertia-react';
 import {GrClose} from 'react-icons/gr';
 import {MdMenu} from 'react-icons/md';
 import {BsLock, BsUnlock} from 'react-icons/bs'
-// import Guest from "vendor/laravel/breeze/stubs/inertia-react/resources/js/Layouts/GuestLayout";
 
 
-function Navbar({Guest}) {
+function AdminNav({auth}) {
 
     // const {auth} = usePage().props;
     const navRef = useRef();
@@ -28,7 +27,7 @@ function Navbar({Guest}) {
                 </Link>
 
                 <div className="flex gap-3 items-center">
-                    {Guest ? (
+                    {auth ? (
                         <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
                             <BsUnlock className="text-xl"/>
                         </Link>
@@ -44,19 +43,18 @@ function Navbar({Guest}) {
 
                 <div className="nav-menu">
                         
-                    <NavLink href={route('dashboard')} active={route().current('dashboard')}>Dashboard</NavLink>                
-                    <NavLink href={route('construction')} active={route().current('vetting')}>talent as a service</NavLink>
-                    <NavLink href={route('construction')} active={route().current('blog')}>news</NavLink>
-                    <NavLink href={route('about')} active={route().current('about')}>about</NavLink>
-                    <NavLink href={route('construction')} active={route().current('blog')}>Learn</NavLink>
-                    <NavLink href={route('construction')} active={route().current('vets')}>vet your talent</NavLink>
+                    <NavLink href={route('dashboard')} active={route().current('dashboard')}>Admin</NavLink>                
+                    <NavLink href={route('vetting')} active={route().current('vetting')}>talent as a service</NavLink>
+                    <NavLink href={route('blog')} active={route().current('blog')}>news</NavLink>
+                    <NavLink href={route('about')} active={route().current('about')}>Stats</NavLink>
+                    <NavLink href={route('blog')} active={route().current('blog')}>Blog</NavLink>
+                    <NavLink href={route('vets')} active={route().current('vets')}>vet your talent</NavLink>
 
                     <NavLink href={route('talents')} active={route().current('talents')} className="find">
                         hire talent
                     </NavLink>
                     
-                    <NavLink href={route('construction')} active={route().current('package')}>Premium plans</NavLink>
-                    <NavLink href={route('construction')} active={route().current('profile')}>profile</NavLink>
+                    <NavLink href={route('profile')} active={route().current('profile')}>profile</NavLink>
 
                 </div>
 
@@ -65,4 +63,4 @@ function Navbar({Guest}) {
      );
 }
 
-export default Navbar;
+export default AdminNav;

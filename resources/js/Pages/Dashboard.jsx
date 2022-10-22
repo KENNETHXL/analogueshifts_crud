@@ -14,38 +14,19 @@ export default function Dashboard(props) {
 
             <div className="min-h-screen py-12">
                 <div className="grid gap-3 max-w-7xl mx-auto px-3 md:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div className="grid md:flex md:justify-between bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">Welcome Back, We miss you!</div>
-                    </div>
-
-                    <div className='grid md:grid-cols-3 gap-3 md:justify-between'>
-                        <Link href={route('profile')} className='flex justify-between gap-3 items-center bg-blue-300 p-3 rounded-lg'>
-                            <span>Profile</span>
+                        <Link href={route('construction')} className='flex justify-between gap-3 items-center p-2 md:p-0'>
+                            <span>full name</span>
                             <span className='border rounded-full p-5'>
                                 <GrUserExpert className='h-7 w-7 text-gray-700' />
                             </span>
                         </Link>
-                        {/* {props.auth.user.type === admin ? ( */}
-                            <Link href={route('profile')} className='flex justify-between gap-3 items-center bg-green-300 p-3 rounded-lg'>
-                                <span>Admin</span>
-                                <span className='border rounded-full p-5'>
-                                    <BiStats className='h-7 w-7 text-gray-700' />
-                                </span>
-                            </Link>
-                        {/* ):(
-                            <Link href={route('profile')} className='flex justify-between gap-3 items-center bg-green-300 p-3 rounded-lg'>
-                                <span>Vetting</span>
-                                <span className='border rounded-full p-5'>
-                                    <BiStats className='h-7 w-7 text-gray-700' />
-                                </span>
-                            </Link>
-                        )} */}
-                        <Link href={route('package')} className='flex justify-between gap-3 items-center bg-yellow-300 p-3 rounded-lg'>
-                            <span>Premium</span>
-                            <span className='border rounded-full p-5'>
-                                <GrDiamond className='h-7 w-7 text-gray-700' />
-                            </span>
-                        </Link>
+                        
+                    </div>
+
+                    <div className='grid md:grid-cols-3 gap-3 md:justify-between'>
+                        
                     </div>
                     
                 </div>
