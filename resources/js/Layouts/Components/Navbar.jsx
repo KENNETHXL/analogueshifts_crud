@@ -1,18 +1,17 @@
 import { useRef, useState } from "react";
 import Dropdown from '@/Components/Utils/Dropdown';
 import NavLink from '@/Components/Utils/NavLink';
-import { Link } from '@inertiajs/inertia-react';
+import { Link, usePage } from '@inertiajs/inertia-react';
 import {GrClose} from 'react-icons/gr';
 import {MdMenu} from 'react-icons/md';
 import {BsLock, BsUnlock} from 'react-icons/bs'
-// import Guest from "vendor/laravel/breeze/stubs/inertia-react/resources/js/Layouts/GuestLayout";
 
 
 function Navbar({Guest}) {
 
-    // const {auth} = usePage().props;
     const navRef = useRef();
     const [open, setOpen] = useState(false);
+    const auth = usePage().props.auth.user;
 
     
     return ( 
@@ -28,13 +27,15 @@ function Navbar({Guest}) {
                 </Link>
 
                 <div className="flex gap-3 items-center">
-                    {Guest ? (
-                        <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
-                            <BsUnlock className="text-xl"/>
-                        </Link>
-                    ) : (
+                    {auth ? (
                         <Link className="border rounded-full p-3 text-gray-700 hover:text-red-500" href={route('logout')} method="post" as="button">
                             <BsLock className="text-xl"/>
+                            {/* logout */}
+                        </Link>
+                    ) : (
+                        <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
+                            <BsUnlock className="text-xl"/>
+                            {/* login */}
                         </Link>
                     )}
                     <button onClick={() => setOpen(!open)} className="close-btn">
@@ -45,18 +46,18 @@ function Navbar({Guest}) {
                 <div className="nav-menu">
                         
                     <NavLink href={route('dashboard')} active={route().current('dashboard')}>Dashboard</NavLink>                
-                    <NavLink href={route('construction')} active={route().current('vetting')}>talent as a service</NavLink>
-                    <NavLink href={route('construction')} active={route().current('blog')}>news</NavLink>
+                    <NavLink href={route('vetting')} active={route().current('vetting')}>talent as a service</NavLink>
+                    <NavLink href={route('blog')} active={route().current('blog')}>news</NavLink>
                     <NavLink href={route('about')} active={route().current('about')}>about</NavLink>
-                    <NavLink href={route('construction')} active={route().current('blog')}>Learn</NavLink>
-                    <NavLink href={route('construction')} active={route().current('vets')}>vet your talent</NavLink>
+                    <NavLink href={route('construction')} active={route().current('construction')}>Learn</NavLink>
+                    <NavLink href={route('vets')} active={route().current('vets')}>vet your talent</NavLink>
 
                     <NavLink href={route('talents')} active={route().current('talents')} className="find">
                         hire talent
                     </NavLink>
                     
-                    <NavLink href={route('construction')} active={route().current('package')}>Premium plans</NavLink>
-                    <NavLink href={route('construction')} active={route().current('profile')}>profile</NavLink>
+                    <NavLink href={route('package')} active={route().current('package')}>Premium plans</NavLink>
+                    <NavLink href={route('profile')} active={route().current('profile')}>profile</NavLink>
 
                 </div>
 

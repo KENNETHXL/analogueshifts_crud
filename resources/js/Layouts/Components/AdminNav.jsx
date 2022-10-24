@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
 import Dropdown from '@/Components/Utils/Dropdown';
 import NavLink from '@/Components/Utils/NavLink';
-import { Link } from '@inertiajs/inertia-react';
+import { Link, usePage } from '@inertiajs/inertia-react';
 import {GrClose} from 'react-icons/gr';
 import {MdMenu} from 'react-icons/md';
 import {BsLock, BsUnlock} from 'react-icons/bs'
 
 
-function AdminNav({auth}) {
+function AdminNav() {
 
-    // const {auth} = usePage().props;
     const navRef = useRef();
     const [open, setOpen] = useState(false);
+    const auth = usePage().props.auth.user;
 
     
     return ( 
@@ -28,12 +28,14 @@ function AdminNav({auth}) {
 
                 <div className="flex gap-3 items-center">
                     {auth ? (
-                        <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
-                            <BsUnlock className="text-xl"/>
-                        </Link>
-                    ) : (
                         <Link className="border rounded-full p-3 text-gray-700 hover:text-red-500" href={route('logout')} method="post" as="button">
                             <BsLock className="text-xl"/>
+                            {/* logout */}
+                        </Link>
+                    ) : (
+                        <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
+                            <BsUnlock className="text-xl"/>
+                            {/* login */}
                         </Link>
                     )}
                     <button onClick={() => setOpen(!open)} className="close-btn">

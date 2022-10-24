@@ -1,9 +1,11 @@
+import { usePage } from '@inertiajs/inertia-react';
 import React, { useState } from 'react';
 import AdminNav from './Components/AdminNav';
 import Navbar from './Components/Navbar';
 
-export default function Authenticated({ auth, header, children }) {
+export default function Authenticated({ header, children }) {
 
+    const auth = usePage().props.auth;
     return (
         <div className="min-h-screen bg-gray-100 py-20">
 
