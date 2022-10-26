@@ -17,7 +17,7 @@ export default function Welcome(props) {
                 <Companies />
                 <BuildTeam />
                 <Cards />
-                <About/>
+                {/* <About/> */}
                 
             </div>
         </All>

@@ -10,11 +10,11 @@ export default function All({ header, children }) {
     return (
         <div className="min-h-screen bg-gray-100 pt-20">
 
-            {auth.user.role == ('admin') ? (
+            {/* {auth.user.role == ('admin') ? (
                 <AdminNav />
-            ):(
+            ):( */}
                 <Navbar />
-            )}
+            {/* )} */}
 
             <main>{children}</main>
 
