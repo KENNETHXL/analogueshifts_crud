@@ -49,7 +49,7 @@ function Navbar({Guest}) {
                     <NavLink href={route('vetting')} active={route().current('vetting')}>talent as a service</NavLink>
                     <NavLink href={route('blog')} active={route().current('blog')}>news</NavLink>
                     <NavLink href={route('about')} active={route().current('about')}>about</NavLink>
-                    <NavLink href={route('construction')} active={route().current('construction')}>Learn</NavLink>
+                    <NavLink href={route('learn')} active={route().current('learn')}>Learn</NavLink>
                     <NavLink href={route('vets')} active={route().current('vets')}>vet your talent</NavLink>
 
                     <NavLink href={route('talents')} active={route().current('talents')} className="find">

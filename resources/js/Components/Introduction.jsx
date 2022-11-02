@@ -11,7 +11,7 @@ function Introduction() {
                 <div className='grid space-y-5 gap-5'>
                     <div className='grid gap-3 items-center'>
                     
-                        <h4 className="text-4xl font-black text-black">Introducing The</h4>
+                        <h4 className="text-4xl font-black text-black">Introducing</h4>
                         <h1 className='text-4xl font-black text-black'>The Future of Talent Recruitment</h1>
                     
                         <p className='flex items-center text-lg md:leading-loose'>
