@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, Head } from '@inertiajs/inertia-react';
-import All from '@/Layouts/AllLayout';
+import Authenticated from '@/Layouts/AuthenticatedLayout';
 
 export default function Talents(props) {
     return (
-        <All>
+        <Authenticated>
             <Head title="Welcome" />
             <div className="home py-16 px-2">
                 
@@ -43,6 +43,6 @@ export default function Talents(props) {
 
                 
             </div>
-        </All>
+        </Authenticated>
     );
 }

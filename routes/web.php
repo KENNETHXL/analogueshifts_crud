@@ -82,4 +82,39 @@ Route::get('about', function () {
 
 
 
+// admin pages
+
+// learn routes
+
+Route::get('/learn_dashboard', function () {
+    return Inertia::render('Admin/Learn/Index');
+})->middleware(['auth', 'verified'])->name('learn_dash');
+
+
+Route::get('/learn_create', function () {
+    return Inertia::render('Admin/Learn/Create');
+})->middleware(['auth', 'verified'])->name('learn_create');
+
+
+Route::get('/learn_edit', function () {
+    return Inertia::render('Admin/Learn/Edit');
+})->middleware(['auth', 'verified'])->name('learn_edit');
+
+// blog routes
+
+Route::get('/blog_dashboard', function () {
+    return Inertia::render('Admin/Blog/Index');
+})->middleware(['auth', 'verified'])->name('blog_dash');
+
+
+Route::get('/blog_create', function () {
+    return Inertia::render('Admin/Blog/Create');
+})->middleware(['auth', 'verified'])->name('blog_create');
+
+
+Route::get('/blog_edit', function () {
+    return Inertia::render('Admin/Blog/Edit');
+})->middleware(['auth', 'verified'])->name('blog_edit');
+
+
 require __DIR__.'/auth.php';

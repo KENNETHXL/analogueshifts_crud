@@ -1,35 +1,28 @@
 import React from 'react';
 import { Link, Head } from '@inertiajs/inertia-react';
-import All from '@/Layouts/AllLayout';
+import Authenticated from '@/Layouts/AuthenticatedLayout';
 
-export default function Learn(props) {
+export default function Create(props) {
     return (
-        <All>
+        <Authenticated>
             <Head title="Learn" />
             <div className="home py-16 px-2">
 
                 
-                <div className="grid lg:grid-flow-col-4 md:grid-cols-3 bg-white rounded-lg border border-gray-200 shadow-md">
-                    <div className='grid justify-center items-center gap-3 p-2'>
-                        <div>
-                            <iframe height="315" 
-                                    src="https://www.youtube.com/embed/Xrgk023l4lI" 
-                                    title="YouTube video player" 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; 
-                                    encrypted-media; gyroscope; picture-in-picture" 
-                                    allowFullScreen
-                            ></iframe>
-                        </div>
-                        <div className='flex justify-between px-3 gap-2 font-bold'>
-                            <span>title</span>
-                            <span>tags</span>
-                        </div>
+                <form className="grid gap-2 bg-white p-2 md:p-9 rounded-lg border border-gray-200 shadow-md">
+                    <label className='text-2xl font-bold text-yellow-500'>Add New Video</label>
+                    <div className='grid gap-3'>
+                        <input type='text' placeholder='Title here' className='rounded-lg p-3'/>
+                        <input type='text' placeholder='URL here' className='rounded-lg p-3'/>
+                        <textarea className='rounded-lg p-3 h-80' placeholder='Description'></textarea>
                     </div>
-                </div>
+                    <div className='grid justify-end'>
+                        <button className='bg-yellow-500 p-3 rounded-lg mt-5 font-bold'>Submit</button>
+                    </div>
+                </form>
                
                 
             </div>
-        </All>
+        </Authenticated>
     );
 }
