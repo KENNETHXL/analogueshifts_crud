@@ -1,0 +1,1 @@
+import{G as r}from"./GuestLayout.e47988fc.js";import{r as s,a as e}from"./app.f83c461e.js";class c extends s.exports.Component{render(){return e(r,{children:e("div",{className:"grid justify-center items-center uppercase",children:e("span",{className:"text-center",children:"sorry this page is under Construction"})})})}}export{c as default};
