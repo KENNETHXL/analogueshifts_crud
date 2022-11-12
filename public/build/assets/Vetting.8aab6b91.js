@@ -1,1 +1,0 @@
-import{j as r,a as e,H as t}from"./app.f83c461e.js";import{A as o}from"./AllLayout.c292af0a.js";import"./Navbar.1311be66.js";import"./iconBase.a8aaf21e.js";import"./index.esm.fc009cfe.js";function n(s){return r(o,{children:[e(t,{title:"Welcome"}),e("div",{className:"home min-h-screen"})]})}export{n as default};
