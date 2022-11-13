@@ -12,13 +12,21 @@ class LearnController extends Controller
 
     public function __construct()
     {
-        return $this->middleware(['auth', 'verified']);
+        return $this->middleware(['auth', 'verified'])
+            ->except(['all', 'show']);
+    }
+
+    public function all()
+    {
+        return Inertia::render("Learn", [
+            "learns" => Learn::latest()->get()
+        ]);
     }
 
     public function dashboard()
     {
         return Inertia::render('Admin/Learn/Index', [
-            "learns" => Learn::all(),
+            "learns" => Learn::latest()->get(),
         ]);
     }
 
@@ -31,9 +39,9 @@ class LearnController extends Controller
     {
         $validated = $request->validate([
             "title" => ['required', 'string', 'min:10', 'max:255', "unique:learns"],
-            "url" => ['required', 'url', "unique:learns"],
+            "url" => ['required', 'string', "unique:learns"],
             "tag" => ['required', 'string', 'min:3', 'max:50'],
-            "description" => ['required', 'string', 'min:50', 'max:255'],
+            "description" => ['required', 'string', 'min:50', 'max:500'],
         ]);
 
         Learn::create([...$validated, "slug" => str_replace(" ", "-", $validated["title"])]);
@@ -52,9 +60,9 @@ class LearnController extends Controller
     {
         $validated = $request->validate([
             "title" => ['required', 'string', 'min:10', 'max:255', Rule::unique("learns")->ignore($learn)],
-            "url" => ['required', 'url', Rule::unique("learns")->ignore($learn)],
+            "url" => ['required', 'string', Rule::unique("learns")->ignore($learn)],
             "tag" => ['required', 'string', 'min:3', 'max:50'],
-            "description" => ['required', 'string', 'min:50', 'max:255'],
+            "description" => ['required', 'string', 'min:50', 'max:500'],
         ]);
 
         $learn->title = $validated['title'];

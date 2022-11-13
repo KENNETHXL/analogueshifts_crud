@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearnController;
 
 
-Route::middleware(['auth', 'verified'])->prefix("/learn")->name("learn.")->group(function () {
+Route::get("/learn", [LearnController::class, "all"])->name("learn.all");
+
+Route::middleware(['auth', 'verified'])->prefix("admin/learn")->name("learn.")->group(function () {
     Route::get('/dashboard', [LearnController::class, "dashboard"])->name('index');
     Route::get('/create', [LearnController::class, "create"])->name('create');
     Route::post("/learn", [LearnController::class, "store"])->name("store");

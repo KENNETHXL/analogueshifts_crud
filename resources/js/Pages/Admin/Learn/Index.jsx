@@ -47,7 +47,7 @@ export default function Index({learns}) {
                         </thead>
                         <tbody>
                             {learns.map(learn => (
-                                <tr className="bg-white border-t">
+                                <tr className="bg-white border-t" key={learn.id}>
                                     <th scope="row"
                                         className="py-4 px-6 font-medium text-gray-900 max-w-[250px]">
                                         {learn.title}

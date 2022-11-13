@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("slug")->unique();
             $table->string("url")->unique();
             $table->string("tag");
-            $table->string("description");
+            $table->text("description");
             $table->timestamps();
         });
     }

@@ -40,10 +40,6 @@ Route::get('/package', function () {
     return Inertia::render('Package');
 })->middleware(['auth', 'verified'])->name('package');
 
-Route::get('/learn', function () {
-    return Inertia::render('Learn');
-})->middleware(['auth', 'verified'])->name('learn');
-
 Route::get('/talents', function () {
     return Inertia::render('Talents');
 })->middleware(['auth', 'verified'])->name('talents');
@@ -72,17 +68,9 @@ Route::get('/vetting', function () {
     return Inertia::render('Vet/Vetting');
 })->middleware(['auth', 'verified'])->name('vetting');
 
-Route::get('/learn', function () {
-    return Inertia::render('Learn');
-})->middleware(['auth', 'verified'])->name('learn');
-
 Route::get('about', function () {
     return Inertia::render('About');
 })->name('about');
-
-Route::get('blog', function () {
-    return Inertia::render('Blog');
-})->name('blog');
 
 
 include __DIR__ . "/web/learn.php";

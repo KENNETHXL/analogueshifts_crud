@@ -11,7 +11,22 @@ class BlogController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware(['auth', 'verified']);
+        return $this->middleware(['auth', 'verified'])
+            ->except(["all", 'show']);
+    }
+
+    public function all()
+    {
+        return Inertia::render("Blog", [
+            "blogs" => Blog::latest()->get(),
+        ]);
+    }
+
+    public function show(Blog $blog)
+    {
+        return Inertia::render("ShowBlog", [
+            "blog" => $blog,
+        ]);
     }
 
     public function dashboard()
@@ -38,7 +53,7 @@ class BlogController extends Controller
         if ($request->file("thumbnail")) {
             $path = $request->file('thumbnail')->storeAs(
                 'public/thumbnails',
-                $validated["title"].".jpg"
+                $validated["title"] . ".jpg"
             );
 
             $validated["thumbnail"] = str_replace("public", "/storage", $path);
