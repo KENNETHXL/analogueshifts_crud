@@ -26,8 +26,9 @@
 
         .nav-menu{
 
-            @apply fixed top-0 h-screen bg-white overflow-auto ml-auto tracking-widest
-                items-start justify-center gap-1 flex-col font-light p-5 md:pt-16 flex;
+            @apply fixed top-0 h-screen bg-white overflow-x-auto ml-auto tracking-widest
+                items-start justify-center gap-2 flex-col font-light p-5 md:pt-16 flex;
+                z-index:99;
                 left: -300px;
 
                 a{

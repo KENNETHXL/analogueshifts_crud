@@ -65,13 +65,13 @@ export default class Charts extends Component {
         <div id="chartModal" className="hidden grid justify-center items-center overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[100] w-full md:inset-0 h-modal md:h-full">
             <div className="relative w-96 max-w-7xl h-full md:h-auto">
                 {/* <!-- Modal content --> */}
-                <div className="relative grid items-center mt-32 md:mt-0 bg-white rounded-lg shadow dark:bg-gray-700">
+                <div className="relative grid items-center mt-32 md:mt-0 bg-white rounded-lg shadow">
                     {/* <!-- Modal header --> */}
-                    <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    <div className="flex justify-between items-start p-4 rounded-t border-b">
+                        <h3 className="text-xl font-semibold text-gray-900">
                             Full-Stack Developer 
                         </h3>
-                        <button  id='chartClose' type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <button  id='chartClose' type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
                             <span className="text-xl font-bold">X</span>
                         </button>
                     </div>
@@ -80,9 +80,9 @@ export default class Charts extends Component {
                         <PieData />
                     </div>
                     {/* <!-- Modal footer --> */}
-                    <div className="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                        <button data-modal-toggle="defaultModal" type="button" className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">Print</button>
-                        <button data-modal-toggle="defaultModal" type="button" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Share</button>
+                    <div className="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
+                        <button data-modal-toggle="defaultModal" type="button" className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Print</button>
+                        <button data-modal-toggle="defaultModal" type="button" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Share</button>
                     </div>
                 </div>
             </div>

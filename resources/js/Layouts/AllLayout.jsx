@@ -1,6 +1,5 @@
 import { usePage } from '@inertiajs/inertia-react';
 import React, { useState } from 'react';
-import AdminNav from './Components/AdminNav';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 
@@ -10,12 +9,8 @@ export default function All({ header, children }) {
     return (
         <div className="min-h-screen bg-gray-100 pt-20">
 
-            {/* {auth.user.role == ('admin') ? (
-                <AdminNav />
-            ):( */}
-                <Navbar />
-            {/* )} */}
-
+            <Navbar />
+           
             <main>{children}</main>
 
             <Footer />

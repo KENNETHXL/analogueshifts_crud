@@ -72,13 +72,17 @@ Route::get('/vetting', function () {
     return Inertia::render('Vet/Vetting');
 })->middleware(['auth', 'verified'])->name('vetting');
 
-Route::get('blog', function () {
-    return Inertia::render('Blog');
-})->name('blog');
+Route::get('/learn', function () {
+    return Inertia::render('Learn');
+})->middleware(['auth', 'verified'])->name('learn');
 
 Route::get('about', function () {
     return Inertia::render('About');
 })->name('about');
+
+Route::get('blog', function () {
+    return Inertia::render('Blog');
+})->name('blog');
 
 
 include __DIR__ . "/web/learn.php";

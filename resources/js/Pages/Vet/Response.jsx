@@ -16,9 +16,9 @@ export default function Response(props) {
             <div className="overflow-x-auto py-12 space-y-9 px-3 md:px-12">
                 <Charts />
                 <div className="">
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <table className="w-full text-sm text-left text-gray-500">
                         <thead
-                            className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" className="py-3 px-6">
                                 Name
@@ -38,9 +38,9 @@ export default function Response(props) {
                         </tr>
                         </thead>
                         <tbody>
-                            <tr className="bg-white dark:bg-gray-800 border-t">
+                            <tr className="bg-white border-t">
                                 <th scope="row"
-                                    className="py-4 px-6 font-medium text-gray-900 dark:text-white max-w-[250px]">
+                                    className="py-4 px-6 font-medium text-gray-900 max-w-[250px]">
                                     Kenneth Malaka
                                 </th>
                                 <td className="py-4 px-6">

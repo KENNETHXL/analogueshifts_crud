@@ -57,20 +57,20 @@ export default function Create(props) {
                             <p className='text-lg font-semibold text-gray-500'>1. Question one (1) options and selected answer ?</p>
                             <div className='grid gap-3 p-3'>
                                 <div className="flex items-center mb-4">
-                                    <input disabled id="disabled-radio-1" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-500 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                    <label className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-500">option A</label>
+                                    <input disabled id="disabled-radio-1" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-500 focus:ring-blue-500"/>
+                                    <label className="ml-2 text-sm font-medium text-gray-700">option A</label>
                                 </div>
                                 <div className="flex items-center mb-4">
-                                    <input disabled id="disabled-radio-1" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-500 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                    <label className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-500">option B</label>
+                                    <input disabled id="disabled-radio-1" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-500 focus:ring-blue-500"/>
+                                    <label className="ml-2 text-sm font-medium text-gray-700">option B</label>
                                 </div>
                                 <div className="flex items-center mb-4">
-                                    <input disabled id="disabled-radio-1" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-500 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                    <label className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-500">option C</label>
+                                    <input disabled id="disabled-radio-1" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-500 focus:ring-blue-500"/>
+                                    <label className="ml-2 text-sm font-medium text-gray-700">option C</label>
                                 </div>
                                 <div className="flex items-center mb-4">
-                                    <input disabled checked id="disabled-radio-2" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                    <label className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-500">answer to question</label>
+                                    <input disabled checked id="disabled-radio-2" type="radio" value="" name="disabled-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"/>
+                                    <label className="ml-2 text-sm font-medium text-gray-700">answer to question</label>
                                 </div>
                             </div>
                             <div className='flex gap-3 absolute top-3 right-3'>

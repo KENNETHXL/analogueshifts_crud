@@ -24,9 +24,9 @@ export default function Index({blogs}) {
             <div className="overflow-x-auto py-12 space-y-9 px-3 md:px-12">
                 <a href={route('blog.create')} className='bg-yellow-500 p-3 rounded-lg mt-5 absolute bottom-3 right-3 font-bold'>+ Create New</a>
                 <div className="">
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <table className="w-full text-sm text-left text-gray-500">
                         <thead
-                            className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" className="py-3 px-6">
                                 Title
@@ -44,9 +44,9 @@ export default function Index({blogs}) {
                         </thead>
                         <tbody>
                             {blogs.map(blog => (
-                                <tr className="bg-white dark:bg-gray-800 border-t" key={blog.id}>
+                                <tr className="bg-white border-t" key={blog.id}>
                                     <th scope="row"
-                                        className="py-4 px-6 font-medium text-gray-900 dark:text-white max-w-[250px]">
+                                        className="py-4 px-6 font-medium text-gray-900 max-w-[250px]">
                                         {blog.title}
                                     </th>
                                     <td className="py-4 px-6">
