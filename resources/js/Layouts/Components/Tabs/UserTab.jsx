@@ -19,13 +19,13 @@ function UserTab() {
         <div className="">
 
             <div className='grid md:grid-cols-3 justify-center gap-2'>
-                <Link href={route('learn')} className='flex justify-center gap-3 border items-center p-5 w-full bg-orange-400'>
+                <Link href={route('learn.all')} className='flex justify-center gap-3 border items-center p-5 w-full bg-orange-400'>
                     <AiOutlineVideoCameraAdd />
                     <span className='p-2'>
                         Learn
                     </span>
                 </Link>
-                <Link href={route('blog')} className='flex justify-center gap-3 border items-center p-5 w-full bg-amber-400'>
+                <Link href={route('blogs')} className='flex justify-center gap-3 border items-center p-5 w-full bg-amber-400'>
                     <FaBlogger />
                     <span className='p-2'>
                         Blog

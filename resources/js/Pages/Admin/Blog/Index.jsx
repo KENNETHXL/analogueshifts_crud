@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Head, useForm } from '@inertiajs/inertia-react';
 import Authenticated from '@/Layouts/AuthenticatedLayout';
-import { AiOutlineShareAlt } from 'react-icons/ai'
 import { FiEdit3 } from 'react-icons/fi'
 import { MdOutlineDelete } from 'react-icons/md'
 
@@ -15,6 +14,7 @@ export default function Index({blogs}) {
             remove(route("blog.delete", id));
         }
     }
+
 
     return (
         <Authenticated>
@@ -55,15 +55,14 @@ export default function Index({blogs}) {
                                     <td className="py-4 px-6">
                                         {new Date(blog.created_at).toDateString()}
                                     </td>
-                                    <td className="py-4 px-6 flex gap-3 text-base">
-                                        <a className='underline' href={route('blog.index')}>
+                                    <td className="flex justify-start items-cemter py-4 px-6 gap-3 text-base">
+                                        <a className='flex items-center underline' href={route("blog.show", blog.slug)}>
                                             View
                                         </a>
-                                        <AiOutlineShareAlt />
-                                        <a className='' href={route('blog.edit', blog.id)}>
+                                        <a className='flex items-center' href={route('blog.edit', blog.id)}>
                                             <FiEdit3 />
                                         </a>
-                                        <button onClick={() => deleteLearn(blog.id)}>
+                                        <button className='flex items-center' onClick={() => deleteLearn(blog.id)}>
                                             <MdOutlineDelete />
                                         </button>
                                     </td>

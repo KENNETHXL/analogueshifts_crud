@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Head, useForm } from '@inertiajs/inertia-react';
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Authenticated from '@/Layouts/AuthenticatedLayout';
 import { AiOutlineShareAlt } from 'react-icons/ai'
 import { FiEdit3 } from 'react-icons/fi'
@@ -56,7 +57,7 @@ export default function Index({learns}) {
                                         {learn.tag}
                                     </td>
                                     <td className="py-4 px-6">
-                                        <a className='underline' target="_blank" href={learn.url}>
+                                        <a className='underline' href={"https://www.youtube.com/embed/"+learn.url} target='blank'>
                                             View
                                         </a>
                                     </td>
@@ -64,7 +65,11 @@ export default function Index({learns}) {
                                         30/12/2022
                                     </td>
                                     <td className="py-4 px-6 flex gap-3 text-base">
-                                        <AiOutlineShareAlt />
+                                        <CopyToClipboard text={"https://www.youtube.com/embed/"+learn.url}>
+                                            <button>
+                                                <AiOutlineShareAlt />
+                                            </button>
+                                        </CopyToClipboard>
                                         <a className='' href={route('learn.edit', learn.slug)}>
                                             <FiEdit3 />
                                         </a>

@@ -4,7 +4,6 @@ import Authenticated from '@/Layouts/AuthenticatedLayout';
 
 export default function Learn({learns}) {
 
-    console.log(learns);
 
     return (
         <Authenticated>
