@@ -6,7 +6,7 @@ import { BiStats } from 'react-icons/bi'
 
 export default function Dashboard(props) {
     const auth = usePage().props.auth;
-    
+
     return (
         <AuthenticatedLayout
             errors={props.errors}
@@ -22,18 +22,18 @@ export default function Dashboard(props) {
                             <span className='border rounded-full p-5'>
                                 <GrUserExpert className='h-7 w-7 text-gray-700' />
                             </span>
-                        </Link> 
+                        </Link>
                     </div>
 
                     <div className='grid gap-3'>
                         {auth?.user?.role == 'admin' ? (
                             <div className='grid  md:grid-cols-3 grid-cols-2 justify-between gap-2'>
-                                <Link href={route('learn_dash')} className='flex justify-between gap-3 items-center p-2 md:p-0'>
+                                <Link href={route('learn.index')} className='flex justify-between gap-3 items-center p-2 md:p-0'>
                                     <span className='border rounded-full p-5'>
                                         Learn Dashboard
                                     </span>
                                 </Link>
-                                <Link href={route('blog_dash')} className='flex justify-between gap-3 items-center p-2 md:p-0'>
+                                <Link href={route('blog.index')} className='flex justify-between gap-3 items-center p-2 md:p-0'>
                                     <span className='border rounded-full p-5'>
                                         Blog Dashboard
                                     </span>
@@ -42,9 +42,9 @@ export default function Dashboard(props) {
                         ):(
                             null
                         )}
-                        
+
                     </div>
-                    
+
                 </div>
             </div>
         </AuthenticatedLayout>

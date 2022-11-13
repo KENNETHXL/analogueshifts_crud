@@ -3,21 +3,22 @@ import { Link, Head } from '@inertiajs/inertia-react';
 import Authenticated from '@/Layouts/AuthenticatedLayout';
 
 export default function Learn(props) {
+
     return (
         <Authenticated>
             <Head title="Learn" />
             <div className="home py-16 px-2">
 
-                
+
                 <div className="grid bg-white rounded-lg border border-gray-200 shadow-md">
                     <div className='grid md:grid-cols-3 justify-center gap-3 p-2'>
                         <div className='grid md:col-span-1 items-center'>
-                            <iframe height="315" 
-                                    src="https://www.youtube.com/embed/Xrgk023l4lI" 
-                                    title="YouTube video player" 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; 
-                                    encrypted-media; gyroscope; picture-in-picture" 
+                            <iframe height="315"
+                                    src="https://www.youtube.com/embed/Xrgk023l4lI"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write;
+                                    encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                             ></iframe>
                         </div>
@@ -38,8 +39,8 @@ export default function Learn(props) {
                         </div>
                     </div>
                 </div>
-               
-                
+
+
             </div>
         </Authenticated>
     );
