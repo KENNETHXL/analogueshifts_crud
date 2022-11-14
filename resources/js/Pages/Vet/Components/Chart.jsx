@@ -62,7 +62,8 @@ export default class Charts extends Component {
             <AiFillPieChart className='h-7 w-7' />
             <span>Charts</span>                    
         </button>
-        <div id="chartModal" className="hidden grid justify-center items-center overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[100] w-full md:inset-0 h-modal md:h-full">
+        <div id="chartModal" className='hidden'>
+          <div className="grid justify-center items-center overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[100] w-full md:inset-0 h-modal md:h-full">
             <div className="relative w-96 max-w-7xl h-full md:h-auto">
                 {/* <!-- Modal content --> */}
                 <div className="relative grid items-center mt-32 md:mt-0 bg-white rounded-lg shadow">
@@ -86,6 +87,7 @@ export default class Charts extends Component {
                     </div>
                 </div>
             </div>
+          </div>
         </div>
       </div>
     )
