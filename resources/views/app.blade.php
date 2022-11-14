@@ -9,9 +9,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        @if(config('app.env') == 'local')
+        {{-- @if(config('app.env') == 'local')
             <script src="http://localhost:35729/livereload.js"></script>
-        @endif
+        @endif --}}
 
         <link rel="stylesheet" href="{{ mix("css/app.css") }}">
 
