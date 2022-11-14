@@ -55,7 +55,7 @@ function Navbar({Guest}) {
                     <NavLink href={route('blogs')} active={route().current('blogs')}>news</NavLink>
                     <NavLink href={route('about')} active={route().current('about')}>about</NavLink>
                     <NavLink href={route('learn.all')} active={route().current('learn.all')}>Learn</NavLink>
-                    <NavLink href={route('vets')} active={route().current('vets')}>vet your talent</NavLink>
+                    <NavLink href={route('construction')} active={route().current('construction')}>vet your talent</NavLink>
 
                     <NavLink href={route('talents')} active={route().current('talents')} className="find">
                         hire talent

@@ -2080,6 +2080,10 @@ select {
 .bg-transparent {
   background-color: transparent;
 }
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
 .p-6 {
   padding: 1.5rem;
 }
