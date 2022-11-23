@@ -53,7 +53,7 @@ class BlogController extends Controller
         if ($request->file("thumbnail")) {
             $path = $request->file('thumbnail')->storeAs(
                 'public/thumbnails',
-                $validated["title"] . ".jpg"
+                str_replace(" ", "-", $validated["title"]) . ".jpg"
             );
 
             $validated["thumbnail"] = str_replace("public", "/storage", $path);
@@ -83,7 +83,7 @@ class BlogController extends Controller
         if ($request->file("thumbnail")) {
             $path = $request->file('thumbnail')->storeAs(
                 'public/thumbnails',
-                $validated["title"] . ".jpg"
+                str_replace(" ", "-", $validated["title"]). ".jpg"
             );
 
             $blog->thumbnail = str_replace("public", "/storage", $path);

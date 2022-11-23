@@ -36,6 +36,22 @@ Route::get('/profile', function () {
     return Inertia::render('Profile');
 })->middleware(['auth', 'verified'])->name('profile');
 
+Route::get('dashboard/payments', function () {
+    return Inertia::render('Admin/Payments/Index');
+})->middleware(['auth', 'verified'])->name('payments');
+
+Route::get('dashboard/payments/view', function () {
+    return Inertia::render('Admin/Payments/View');
+})->middleware(['auth', 'verified'])->name('payments.view');
+
+Route::get('dashboard/payments/edit', function () {
+    return Inertia::render('Admin/Payments/Edit');
+})->middleware(['auth', 'verified'])->name('payments.edit');
+
+Route::get('/pay', function () {
+    return Inertia::render('Pay');
+})->middleware(['auth', 'verified'])->name('pay');
+
 Route::get('/package', function () {
     return Inertia::render('Package');
 })->middleware(['auth', 'verified'])->name('package');

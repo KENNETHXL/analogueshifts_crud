@@ -4,6 +4,7 @@ import { Link, usePage } from '@inertiajs/inertia-react';
 import {AiOutlineVideoCameraAdd} from 'react-icons/ai';
 import {FaBlogger} from 'react-icons/fa';
 import {BsPaypal} from 'react-icons/bs'
+import {SiSpeedtest} from 'react-icons/si'
 
 
 function UserTab() {
@@ -18,30 +19,30 @@ function UserTab() {
 
         <div className="">
 
-            <div className='grid md:grid-cols-3 justify-center gap-2'>
+            <div className='grid md:grid-cols-4 md:justify-center gap-2'>
 
-                <Link href={route('learn.all')} className='flex justify-center gap-3 border items-center p-5 w-full bg-orange-400'>
-                    <AiOutlineVideoCameraAdd />
-                    <span className='p-2'>
+                <Link href={route('learn.all')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-orange-400'>
+                    <AiOutlineVideoCameraAdd className="w-12 h-12 border rounded-full p-2" />
+                    <span className=''>
                         Learn
                     </span>
                 </Link>
-                <Link href={route('blogs')} className='flex justify-center gap-3 border items-center p-5 w-full bg-blue-400'>
-                    <FaBlogger />
-                    <span className='p-2'>
+                <Link href={route('blogs')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-blue-400'>
+                    <FaBlogger className="w-12 h-12 border rounded-full p-2" />
+                    <span className=''>
                         Blog
                     </span>
                 </Link>
-                <Link href={route('learn')} className='flex justify-center gap-3 border items-center p-5 w-full bg-green-400'>
-                    <BsPaypal />
-                    <span className='p-2'>
-                        Make Payments
-                    </span>
-                </Link>
                 <Link href={route('construction')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-amber-400'>
-                    <SiSpeedtest className="w-12 h-12 border rounded-full p-2"/>
+                    <SiSpeedtest className="w-12 h-12 border rounded-full p-2" />
                     <span className=''>
                         Analogue Vets
+                    </span>
+                </Link>
+                <Link href={route('pay')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
+                    <BsPaypal className="w-12 h-12 border rounded-full p-2" />
+                    <span className=''>
+                        Make Payment
                     </span>
                 </Link>
                 

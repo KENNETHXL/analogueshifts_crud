@@ -1,38 +1,5 @@
 import React from 'react';
-import { usePaystackPayment } from 'react-paystack';
 import { BsCheckCircleFill } from 'react-icons/bs'
-  
-  const config = {
-      reference: (new Date()).getTime().toString(),
-      email: "hellow@analogueshifts.com",
-      amount: 3000,
-      publicKey: 'pk_test_e318720d1f86ad8d3d5b6476193264e27264f1f9',
-  };
-  
-  // you can call this function anything
-  const onSuccess = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
-  };
-
-  // you can call this function anything
-  const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log('closed')
-  }
-
-  const PaystackHookBtn = () => {
-      const initializePayment = usePaystackPayment(config);
-      return (
-        <div>
-            <button onClick={() => {
-                initializePayment(onSuccess, onClose)
-            }} className='text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center'>
-                Subscribe
-            </button>
-        </div>
-      );
-  };
   
   function Monthly(props) {
     return (
@@ -61,7 +28,6 @@ import { BsCheckCircleFill } from 'react-icons/bs'
                     <span className="text-base font-normal leading-tight text-gray-500">Integration help</span>
                 </li>
             </ul>
-            <PaystackHookBtn />
         </div>       
                
     );

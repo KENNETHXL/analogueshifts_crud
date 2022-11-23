@@ -1,68 +1,68 @@
 import React from 'react';
-import { usePaystackPayment } from 'react-paystack';
-import { BsCheckCircleFill } from 'react-icons/bs'
-  
-  const config = {
-      reference: (new Date()).getTime().toString(),
-      email: "hellow@analogueshifts.com",
-      amount: 500,
-      publicKey: 'pk_test_e318720d1f86ad8d3d5b6476193264e27264f1f9',
-  };
-  
-  // you can call this function anything
-  const onSuccess = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
-  };
+import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
+import Authenticated from '@/Layouts/AuthenticatedLayout';
 
-  // you can call this function anything
-  const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log('closed')
-  }
+  
 
-  const PaystackHookBtn = () => {
-      const initializePayment = usePaystackPayment(config);
-      return (
-        <div>
-            <button onClick={() => {
-                initializePayment(onSuccess, onClose)
-            }} className='text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center'>
-                Subscribe
-            </button>
-        </div>
-      );
-  };
   
   function Pay(props) {
+    const config = {
+        public_key: 'FLWPUBK_TEST-8cf0d049f7e84a6b39bbf7169f1b936d-X',
+        tx_ref: Date.now(),
+        amount: 100,
+        currency: 'USD',
+        payment_options: 'card,mobilemoney,ussd',
+        customer: {
+          email: 'user@gmail.com',
+          phone_number: '070********',
+          name: 'john doe',
+        },
+        customizations: {
+          title: 'AnalogueShifts',
+          description: 'Payments',
+          logo: 'https://analogueshifts.com/logo.png',
+        },
+      };
+    
+      const fwConfig = {
+        // if 1>2 {
+        ...config,
+        text: 'Pay',
+        callback: (response) => {
+           console.log(response);
+          closePaymentModal() // this will close the modal programmatically
+        },
+        onClose: () => {},
+      // }else{
+        // alert='error'
+      // }
+    };
     return (
-        <div className="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8">
-            <h5 className="mb-4 text-xl font-medium text-gray-500">Make Payment</h5>
-            <div className="flex items-baseline">
-                <span className="text-3xl font-semibold">$</span>
-                <span className="text-5xl font-extrabold tracking-tight">5</span>
-                <span className="ml-1 text-xl font-normal text-gray-500">/Day</span>
-            </div>
-            <ul role="list" className="my-7 space-y-5">
-                <li className="flex space-x-3">
-                    <BsCheckCircleFill className="flex-shrink-0 w-4 h-4 text-blue-600"/>
-                    <span className="text-base font-normal leading-tight text-gray-500">5 Vetting max</span>
-                </li>
-                <li className="flex space-x-3">
-                    <BsCheckCircleFill className="flex-shrink-0 w-4 h-4 text-blue-600"/>
-                    <span className="text-base font-normal leading-tight text-gray-500">Email Notification</span>
-                </li>
-                <li className="flex space-x-3">
-                    <BsCheckCircleFill className="flex-shrink-0 w-4 h-4 text-blue-600"/>
-                    <span className="text-base font-normal leading-tight text-gray-500">Vetting Analytics</span>
-                </li>
-                <li className="flex space-x-3">
-                    <BsCheckCircleFill className="flex-shrink-0 w-4 h-4 text-blue-600"/>
-                    <span className="text-base font-normal leading-tight text-gray-500">Integration help</span>
-                </li>
-            </ul>
-            <PaystackHookBtn />
-        </div>       
+        <Authenticated>
+          <div className="py-12 space-y-9 px-3 md:px-12">
+            <section className='flex justify-center items-center'>
+                <div className="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8">
+                    <h5 className="mb-4 text-lg font-medium text-gray-500">Make Payment</h5>
+                    <div className="grid items-baseline gap-1">
+                        <label className="text-lg font-semibold">$Amout</label>
+                        <input type='number' className='' required/>
+                        <label className="text-lg font-semibold">Name</label>
+                        <input type='text' className='' required/>
+                        <label className="text-lg font-semibold">Email</label>
+                        <input type='email' className='' required/>
+                        <label className="text-lg font-semibold">Tel</label>
+                        <input type='tel' className='' required/>
+                        <label className="text-lg font-semibold">Description</label>
+                        <textarea type='text' className='' required/>
+                        <FlutterWaveButton 
+                            className='text-white bg-yellow-600 hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-200 font-medium rounded-lg text-sm mt-5 px-5 py-2.5 inline-flex justify-center w-full text-center'                        
+                            {...fwConfig} 
+                        />
+                    </div>
+                </div>       
+            </section>
+          </div>
+        </Authenticated>
                
     );
   }
