@@ -91,6 +91,7 @@ Route::get('about', function () {
 
 include __DIR__ . "/web/learn.php";
 include __DIR__ . "/web/blog.php";
+include __DIR__ . "/web/pay.php";
 
 
 require __DIR__.'/auth.php';
