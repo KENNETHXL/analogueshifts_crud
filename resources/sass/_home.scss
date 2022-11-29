@@ -1,7 +1,7 @@
 
 .home{
     
-    @apply px-0 min-h-screen;
+    @apply px-0 gap-5 min-h-screen;
 
     .build-team{
         @apply grid justify-center p-3 md:p-9 pt-20 space-y-16;

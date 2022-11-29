@@ -39,7 +39,7 @@ function UserTab() {
                         Analogue Vets
                     </span>
                 </Link>
-                <Link href={route('pay')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
+                <Link href={route('payment.index')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
                     <BsPaypal className="w-12 h-12 border rounded-full p-2" />
                     <span className=''>
                         Make Payment

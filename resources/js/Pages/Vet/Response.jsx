@@ -50,7 +50,7 @@ export default function Response(props) {
                                     78%
                                 </td>
                                 <td className="py-4 px-6">
-                                    <a className='underline' href={route('response')}>
+                                    <a className='underline' href={route('vet.response')}>
                                         View
                                     </a>
                                 </td>

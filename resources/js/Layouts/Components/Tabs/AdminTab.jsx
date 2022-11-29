@@ -33,13 +33,13 @@ function AdminTab() {
                         Blog Dashboard
                     </span>
                 </Link>
-                <Link href={route('vets')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-amber-400'>
+                <Link href={route('vet.index')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-amber-400'>
                     <SiSpeedtest className="w-12 h-12 border rounded-full p-2"/>
                     <span className=''>
                         Analogue Vets
                     </span>
                 </Link>
-                <Link href={route('payments')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
+                <Link href={route('payment.records')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
                     <BsPaypal className="w-12 h-12 border rounded-full p-2"/>
                     <span className=''>
                         Payments

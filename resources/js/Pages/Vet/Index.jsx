@@ -15,7 +15,7 @@ export default function Index(props) {
             <Head title="Vetting Dashboard" />
 
             <div className="overflow-x-auto py-12 space-y-9 px-3 md:px-12">
-                <a href={route('create')} className='bg-yellow-500 p-3 rounded-lg mt-5 absolute bottom-3 right-3 font-bold'>+ New Vet</a>
+                <a href={route('vet.create')} className='bg-yellow-500 p-3 rounded-lg mt-5 absolute bottom-3 right-3 font-bold'>+ New Vet</a>
                 <div className="">
                     <table className="w-full text-sm text-left text-gray-500">
                         <thead
@@ -60,7 +60,7 @@ export default function Index(props) {
                                     $20
                                 </td>
                                 <td className="py-4 px-6">
-                                    <a className='underline' href={route('response')}>
+                                    <a className='underline' href={route('vet.response')}>
                                         View
                                     </a>
                                 </td>

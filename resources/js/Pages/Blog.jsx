@@ -9,7 +9,7 @@ export default function Blog({blogs}) {
             <Head title="Blog" />
             <div className="home py-16 px-2">
                 {blogs.map(blog => (
-                    <div key={blog.id} className="grid md:grid-cols-3 bg-white rounded-lg border border-gray-200 shadow-md">
+                    <div key={blog.id} className="grid md:grid-cols-3 bg-white my-5 rounded-lg border border-gray-200 shadow-md">
                         <div className='grid justify-center items-center p-2'>
                             <img className="w-full h-80 rounded" src={blog.thumbnail} alt=""/>
                         </div>
@@ -20,15 +20,12 @@ export default function Blog({blogs}) {
                             <p className="mb-3 font-normal text-gray-700">
                                 {blog.content.slice(0, 500)}...
                             </p>
-                            <div className="">
+                            <div className="flex justify-end items-end">
                                 <a href={route("blog.show", blog.slug)} className='px-5 py-2 bg-yellow-500 rounded-lg'>Read More</a>
                             </div>
                         </div>
                     </div>
                 ))}
-
-
-
             </div>
         </All>
     );

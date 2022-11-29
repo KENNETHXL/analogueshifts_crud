@@ -41,17 +41,17 @@ function Navbar({Guest}) {
                 </div>
 
                 <div className="nav-menu">
-                    <Link href="/" className="logo">
+                    <NavLink  href={route('home')} active={route().current('home')}>
                         <img src="/logo.png" className="w-12 h-12" alt="" />
                         <h3 className="md:text-xl text-lg font-bold uppercase text-zinc-600 leading-5">
                             <span className="tracking-widest text-yellow-400">Analogue</span>
                             <br />
                             <span className="tracking-[1rem]">Shifts</span>
                         </h3>
-                    </Link>
+                    </NavLink>
 
                     <NavLink href={route('dashboard')} active={route().current('dashboard')}>Dashboard</NavLink>
-                    <NavLink href={route('vetting')} active={route().current('vetting')}>talent as a service</NavLink>
+                    <NavLink href={route('vet.vetting')} active={route().current('vetting')}>talent as a service</NavLink>
                     <NavLink href={route('blogs')} active={route().current('blogs')}>news</NavLink>
                     <NavLink href={route('about')} active={route().current('about')}>about</NavLink>
                     <NavLink href={route('learn.all')} active={route().current('learn.all')}>Learn</NavLink>
@@ -61,7 +61,7 @@ function Navbar({Guest}) {
                         hire talent
                     </NavLink>
 
-                    <NavLink href={route('package')} active={route().current('package')}>Premium plans</NavLink>
+                    <NavLink href={route('payment.package')} active={route().current('package')}>Premium plans</NavLink>
                     <NavLink href={route('profile')} active={route().current('profile')}>profile</NavLink>
 
                 </div>
