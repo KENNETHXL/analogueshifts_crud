@@ -95,9 +95,9 @@ class HireController extends Controller
         );
 
         
-        Mail::to('tesimune@gmail.com')
-        // ->cc('support@analogueshifts.com')
-        // ->bcc('Kennethmalaka@gmail.com')
+        Mail::to('hello@analogueshifts.com')
+        ->cc('support@analogueshifts.com')
+        ->bcc('Kennethmalaka@gmail.com')
         ->send(new HireTalent($data));
 
         return redirect()->route("dashboard");

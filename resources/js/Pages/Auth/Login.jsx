@@ -84,7 +84,7 @@ export default function Login({ status, canResetPassword }) {
                     )}
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex items-center justify-between mt-4">
                    
                     <Link href={route('register')} className="underline text-sm text-gray-600 hover:text-gray-900">
                         Don't have an account?
