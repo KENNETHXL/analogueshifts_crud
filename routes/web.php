@@ -25,8 +25,9 @@ Route::get('/', function () {
 })->name('home');
 
 include __DIR__ . "/web/constructs.php";
-include __DIR__ . "/web/vet.php";
-include __DIR__ . "/web/learn.php";
-include __DIR__ . "/web/blog.php";
 include __DIR__ . "/web/payment.php";
+include __DIR__ . "/web/blog.php";
+include __DIR__ . "/web/learn.php";
+include __DIR__ . "/web/hire.php";
+include __DIR__ . "/web/vet.php";
 require __DIR__.'/auth.php';

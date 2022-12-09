@@ -19,7 +19,7 @@ function AdminTab() {
 
         <div className="">
 
-            <div className='grid md:grid-cols-4 md:justify-center gap-2'>
+            <div className='grid md:grid-cols-5 md:justify-center gap-2'>
             
                 <Link href={route('learn.index')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-orange-400'>
                     <AiOutlineVideoCameraAdd className="w-12 h-12 border rounded-full p-2"/>
@@ -37,6 +37,12 @@ function AdminTab() {
                     <SiSpeedtest className="w-12 h-12 border rounded-full p-2"/>
                     <span className=''>
                         Analogue Vets
+                    </span>
+                </Link>
+                <Link href={route('hire.index')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-indigo-400'>
+                    <SiSpeedtest className="w-12 h-12 border rounded-full p-2"/>
+                    <span className=''>
+                        Hire's
                     </span>
                 </Link>
                 <Link href={route('payment.records')} className='flex justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>

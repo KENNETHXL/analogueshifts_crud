@@ -9,10 +9,6 @@ Route::get('/profile', function () {
     return Inertia::render('Profile');
 })->middleware(['auth', 'verified'])->name('profile');
 
-Route::get('/talents', function () {
-    return Inertia::render('Talents');
-})->middleware(['auth', 'verified'])->name('talents');
-
 Route::get('about', function () {
     return Inertia::render('About');
 })->name('about');

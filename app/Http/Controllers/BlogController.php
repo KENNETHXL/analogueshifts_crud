@@ -31,14 +31,22 @@ class BlogController extends Controller
 
     public function dashboard()
     {
-        return Inertia::render('Admin/Blog/Index', [
-            "blogs" => Blog::all(),
-        ]);
+        if (auth()->user()->role == 'admin'){
+            return Inertia::render('Admin/Blog/Index', [
+                "blogs" => Blog::all(),
+            ]);
+        }        
+        return redirect()->route("blogs");
+
     }
 
     public function create()
     {
-        return Inertia::render('Admin/Blog/Create');
+        if (auth()->user()->role == 'admin'){
+            return Inertia::render('Admin/Blog/Create');
+        }
+        return redirect()->route("blogs");
+        
     }
 
     public function store(Request $request)
@@ -66,9 +74,13 @@ class BlogController extends Controller
 
     public function edit(Blog $blog)
     {
-        return Inertia::render('Admin/Blog/Edit', [
-            'blog' => $blog,
-        ]);
+        if (auth()->user()->role == 'admin'){
+            return Inertia::render('Admin/Blog/Edit', [
+                'blog' => $blog,
+            ]);
+        }
+        return redirect()->route("blogs");
+        
     }
 
     public function update(Request $request, Blog $blog)

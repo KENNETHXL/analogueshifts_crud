@@ -42,20 +42,32 @@ class PaymentController extends Controller
 
     public function records()
     {
-        // return Payment::all();
-        $payments = Payment::latest()->get();
-        return Inertia::render('Admin/Payments/Index')->with('payments', $payments);
+        if (auth()->user()->role == 'admin'){
+            // return Payment::all();
+            $payments = Payment::latest()->get();
+            return Inertia::render('Admin/Payments/Index')->with('payments', $payments);
+        }
+        return redirect()->route("payment.index");
+        
     }
 
     public function view(Payment $id)
     {
-        $payment = Payment::find($id);
-        return Inertia::render('Admin/Payments/View')->with('payment', $payment);
+        if (auth()->user()->role == 'admin'){
+            $payment = Payment::find($id);
+            return Inertia::render('Admin/Payments/View')->with('payment', $payment);
+        }
+        return redirect()->route("payment.index");
+        
     }
 
     public function edit()
     {
-        return Inertia::render('Admin/Payments/Edit');
+        if (auth()->user()->role == 'admin'){
+            return Inertia::render('Admin/Payments/Edit');
+        }
+        return redirect()->route("payment.index");
+        
     }
 
     public function package()

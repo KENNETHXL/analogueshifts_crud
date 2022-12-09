@@ -42,7 +42,7 @@ function BuildTeam() {
                             That is, create and manage the product roadmap, 
                             track product performance, and provide feedback to stakeholders.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -57,7 +57,7 @@ function BuildTeam() {
                             constraints like budgets and schedules. Also, lead entire teams, define project goals, 
                             communicate with stakeholders, and see a project through to its closure.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -72,7 +72,7 @@ function BuildTeam() {
                             Aesthetically pleasing branding strategies help them effectively reach more customers. 
                             They also ensure that the end-to-end product or service journey meets desired outcomes.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -86,7 +86,7 @@ function BuildTeam() {
                             Hire highly skilled data analysts trained in collecting and interpreting data, analysing results, 
                             reporting the results back to the relevant stakeholders.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -100,7 +100,7 @@ function BuildTeam() {
                             Hire skilled developers trained to build and create software and applications. In addition, 
                             our professionals can debug and execute a software application's source code. 
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -115,7 +115,7 @@ function BuildTeam() {
                             Our professionals can create and implement systems software, 
                             analyze data, and improve existing ones.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -129,7 +129,7 @@ function BuildTeam() {
                             Hire top business analysts trained in the how-to guide of improving processes, 
                             products, and services through data analysis
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -144,7 +144,7 @@ function BuildTeam() {
                             that are difficult or time-consuming and provide a level of convenience and flexibility. Schedule appointments, 
                             travel arrangements, manage email and social media accounts and provide customer service.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -158,7 +158,7 @@ function BuildTeam() {
                             Hire top social media managers that can represent your company globally through your social channels. 
                             They are trained in the right tips for building a brand voice and online presence.
                         </p>
-                        <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                        <a href={route('hire.talents')} className='btn-lg'>
                             <span>Find Top Talents</span>
                             <BsArrowRight />
                         </a>
@@ -177,7 +177,7 @@ function BuildTeam() {
                     We provide pre-job interview assessment on behalf of our clients, who may be either temporary placement agencies or permanent employers. 
                     In addition, we help you optimize the productivity of your projects by coordinating outstanding people to work on them.
                 </h3>
-                <a href="mailto:hello@analogueshifts.com" target='blank' className='btn-lg'>
+                <a href={route('hire.talents')} className='btn-lg'>
                     <span>Find Top Talents</span>
                     <BsArrowRight />
                 </a>

@@ -16,7 +16,7 @@ function Payment({auth, ...props}) {
     }
 
     const config = {
-        public_key: 'FLWPUBK_TEST-8cf0d049f7e84a6b39bbf7169f1b936d-X',
+        public_key: 'FLWPUBK-0bbca7105fb5f5d44c44491bf7b06a77-X',
         tx_ref: "AS-" + Date.now(),
         amount: state.amount,
         currency: 'USD',
