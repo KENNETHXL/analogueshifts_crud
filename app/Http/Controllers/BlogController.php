@@ -33,7 +33,7 @@ class BlogController extends Controller
     {
         if (auth()->user()->role == 'admin'){
             return Inertia::render('Admin/Blog/Index', [
-                "blogs" => Blog::all(),
+                "blogs" => Blog::latest()->get(),
             ]);
         }        
         return redirect()->route("blogs");

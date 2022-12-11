@@ -20,16 +20,15 @@ class HireController extends Controller
     public function all()
     {
         return Inertia::render('OpenHire', [
-            "hires" => Hire::all(),
+            "hires" => Hire::where('status', 'approved')->latest()->get(),
         ]);
-        
     }
 
     public function index()
     {
         if (auth()->user()->role == 'admin'){
             return Inertia::render('Admin/Hire/Index', [
-                "hires" => Hire::all(),
+                "hires" => Hire::latest()->get(),
             ]);
         }
         return redirect()->route("hire.talents");
@@ -59,6 +58,7 @@ class HireController extends Controller
             'email' => ['required', 'string', 'min:1', 'max:50', 'email'],
             'tel' => ['required', 'string', 'min:3', 'max:20'],
             'role' => ['required', 'string', 'min:1', 'max:50'],
+            'vet' => ['string', 'min:1', 'max:50'],
             'hire_type' => ['required', 'string', 'min:3', 'max:50'],
             'range' => ['required', 'string', 'min:1', 'max:50'],
             'expirience' => ['required', 'string', 'min:5', 'max:50'],
@@ -76,6 +76,7 @@ class HireController extends Controller
             "range" => $validated['range'],
             "expirience" => $validated['expirience'],
             "duration" => $validated['duration'],
+            "vet" => $validated['vet'],
             "description" => $validated['description'],
 
 
@@ -83,14 +84,15 @@ class HireController extends Controller
 
         $user = auth()->user();
         $data = array(
-            'name' => $user->name,
-            'email' => $user->email,
-            'tel' => $validated['tel'],
+            "name" => $validated['name'],
+            "email" => $validated['email'],
+            "tel" => $validated['tel'],
             "role" => $validated['role'],
             "hire_type" => $validated['hire_type'],
             "range" => $validated['range'],
             "expirience" => $validated['expirience'],
             "duration" => $validated['duration'],
+            "vet" => $validated['vet'],
             'description' => $validated['description'],
         );
 

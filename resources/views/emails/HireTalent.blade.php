@@ -23,6 +23,10 @@ Job Duration: {{ $data['duration'] }}
 <br>
 <br>
 Description: {{ $data['description'] }}
+<br>
+<br>
+<a color='primary' href="mailto: {{ $data['vet'] }}">Application/Vetting URL</a>
+
 </x-mail::panel>
 
 Thanks,

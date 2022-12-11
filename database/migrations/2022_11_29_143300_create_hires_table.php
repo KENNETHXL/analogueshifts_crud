@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('hires', function (Blueprint $table) {
             $table->id();
+            $table->string('status')->default('pending');
             $table->string("name");
             $table->string("email");
             $table->string("tel");
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string("range");
             $table->string("expirience");
             $table->string("duration");
+            $table->string("vet");
             $table->text("description");
             $table->timestamps();
         });
