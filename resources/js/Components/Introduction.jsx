@@ -1,4 +1,6 @@
 import {BsArrowRight} from 'react-icons/bs';
+import 'tw-elements';
+
 
 function Introduction() {
     
@@ -7,11 +9,21 @@ function Introduction() {
                 
             <div className='grid gap-5 items-center'> 
                 <h4 className="text-5xl font-black text-yellow-100">Introducing</h4>
-                <div>
-                    <h1 className='text-4xl font-black text-yellow-100'>The Future of Talent Recruitment</h1>
+                <div id="carouselExampleSlidesOnly" className="grid md:flex gap-3" data-bs-ride="carousel">
+                    <h1 className='text-4xl font-black text-yellow-100'>The Future of </h1>
+                    <div className="carousel-inner">
+                        <div className="carousel-item active w-full">
+                            <span className='flex items-center text-4xl font-black text-yellow-100'> Talent Recruitment</span>
+                        </div>
+                        <div className="carousel-item relative w-full">
+                            <span className='flex items-center text-4xl font-black text-yellow-100'> Project Management</span>
+                        </div>
+                        <div className="carousel-item relative w-full">
+                            <span className='flex items-center text-4xl font-black text-yellow-100'> Startup Development</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
             <div className="flex flex-col gap-9 justify-center items-center">
                 <p className='flex items-center text-lg md:leading-loose'>
                     We are a dynamic and motivated team of people who share the same goal to find  the right talent for your company.    
