@@ -20,7 +20,15 @@ class HireController extends Controller
     public function all()
     {
         return Inertia::render('OpenHire', [
-            "hires" => Hire::where('status', 'approved')->latest()->get(),
+            "hires" => Hire::where('display', '1')->latest()->get(),
+            // "hires" => Hire::latest()->get(),
+        ]);
+    }
+
+    public function myhire()
+    {
+        return Inertia::render('MyHire', [
+            "hires" => Hire::where('user_id', auth()->user()->id)->latest()->get(),
         ]);
     }
 
@@ -31,7 +39,7 @@ class HireController extends Controller
                 "hires" => Hire::latest()->get(),
             ]);
         }
-        return redirect()->route("hire.talents");
+        return redirect()->route("hire.apply");
         
     }
 
@@ -54,11 +62,12 @@ class HireController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'display' => ['required', 'string', 'max:50'],
             'name' => ['required', 'string', 'min:5', 'max:50'],
             'email' => ['required', 'string', 'min:1', 'max:50', 'email'],
             'tel' => ['required', 'string', 'min:3', 'max:20'],
             'role' => ['required', 'string', 'min:1', 'max:50'],
-            'vet' => ['string', 'min:1', 'max:50'],
+            'vet' => ['required', 'string', 'min:1', 'max:50'],
             'hire_type' => ['required', 'string', 'min:3', 'max:50'],
             'range' => ['required', 'string', 'min:1', 'max:50'],
             'expirience' => ['required', 'string', 'min:5', 'max:50'],
@@ -67,7 +76,8 @@ class HireController extends Controller
         ]);
 
         Hire::create([
-            // 'user_id' => auth()->id(),
+            'user_id' => auth()->id(),
+            "display" => $validated['display'],
             "name" => $validated['name'],
             "email" => $validated['email'],
             "tel" => $validated['tel'],
@@ -102,7 +112,10 @@ class HireController extends Controller
         ->bcc('Kennethmalaka@gmail.com')
         ->send(new HireTalent($data));
 
-        return redirect()->route("dashboard");
+        if (auth()->user()->role == 'admin'){
+            return redirect()->route("hire.index");
+        }
+        return redirect()->route("hire.myhire");
 
     }
 
@@ -125,9 +138,13 @@ class HireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Hire $hire)
     {
-        // return Inertia::render('Talents');
+        if (auth()->user()->role == 'admin' || auth()->user()->id == $hire->user_id ){
+            return Inertia::render('Admin/Hire/Edit', [
+                'hire' => $hire,
+            ]);
+        }
     }
 
     /**
@@ -137,9 +154,42 @@ class HireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Hire $hire)
     {
-        //
+        $validated = $request->validate([
+            'display' => ['required', 'string', 'max:50'],
+            'status' => ['required', 'string', 'max:50'],
+            'name' => ['required', 'string', 'min:5', 'max:50'],
+            'email' => ['required', 'string', 'min:1', 'max:50', 'email'],
+            'tel' => ['required', 'string', 'min:3', 'max:20'],
+            'role' => ['required', 'string', 'min:1', 'max:50'],
+            'vet' => ['required', 'string', 'min:1', 'max:50'],
+            'hire_type' => ['required', 'string', 'min:3', 'max:50'],
+            'range' => ['required', 'string', 'min:1', 'max:50'],
+            'expirience' => ['required', 'string', 'min:5', 'max:50'],
+            'duration' => ['required', 'string', 'min:5', 'max:255'],
+            'description' => ['required', 'string', 'min:10', 'max:500'],
+        ]);
+
+            $hire->display = $validated['display'];
+            $hire->status = $validated['status'];
+            $hire->name = $validated['name'];
+            $hire->email = $validated['email'];
+            $hire->tel = $validated['tel'];
+            $hire->role = $validated['role'];
+            $hire->hire_type = $validated['hire_type'];
+            $hire->range = $validated['range'];
+            $hire->expirience = $validated['expirience'];
+            $hire->duration = $validated['duration'];
+            $hire->vet = $validated['vet'];
+            $hire->description = $validated['description'];
+            $hire->save();
+
+            if (auth()->user()->role == 'admin'){
+                return redirect()->route("hire.index");
+            }
+            return redirect()->route("hire.myhire");
+
     }
 
     /**
@@ -150,7 +200,10 @@ class HireController extends Controller
      */
     public function delete(Hire $hire)
     {
-        $hire->delete();
-        return redirect()->route("hire.index");
+        if (auth()->user()->role == 'admin' || auth()->user()->id == $hire->user_id ){
+            $hire->delete();
+            return redirect()->route("hire.index");
+        }
+        return redirect()->route("hire.apply");
     }
 }

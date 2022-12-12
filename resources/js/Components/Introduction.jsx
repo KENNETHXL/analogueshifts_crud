@@ -1,12 +1,15 @@
 import {BsArrowRight} from 'react-icons/bs';
 
 function Introduction() {
+    
     return ( 
         <header className="grid justify-center gap-14 text-yellow-100 bg-[url('/images/isolated.jpg')] bg-yellow-500 px-5 md:px-48 py-32 md:py-48">
                 
             <div className='grid gap-5 items-center'> 
                 <h4 className="text-5xl font-black text-yellow-100">Introducing</h4>
-                <h1 className='text-4xl font-black text-yellow-100'>The Future of Talent Recruitment</h1>
+                <div>
+                    <h1 className='text-4xl font-black text-yellow-100'>The Future of Talent Recruitment</h1>
+                </div>
             </div>
 
             <div className="flex flex-col gap-9 justify-center items-center">

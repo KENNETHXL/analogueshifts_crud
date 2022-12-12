@@ -5,20 +5,24 @@ import {BsArrowRight, BsFolder2Open} from 'react-icons/bs';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 
 
-export default function OpenHire({hires}) {
+export default function OpenHire({hires, hiresPending}) {
     return (
         <Authenticated>
             <Head title="Welcome" />
 
-            <div className="home py-16 px-2 md:px-12">
+            <div className="home">
 
-                <div className="grid md:grid-cols-3 gap-3">
+                <div className="grid md:grid-cols-3 justify-center gap-3 py-16 px-2 md:px-9">
                 
                     {hires.map(hire => (
-                        <div className="grid justify-center gap-2 bg-yellow-50 p-5 rounded cursor-pointer md:hover:scale-90 shadow" key={hire.id}>
+                        <div className="grid justify-center gap-2 bg-yellow-50 p-3 md:p-5 rounded shadow" key={hire.id}>
                             <div className='flex justify-between py-5 px-1'>
                                 <ApplicationLogo />
-                                <span className='flex text-xs font-bold italic items-end'>Approved</span>
+                                {hire.status == '1' ? (
+                                    <span className='flex text-green-500 text-xs font-bold italic items-start'>Approved</span>
+                                ):(
+                                    <span className='flex text-red-500 text-xs font-bold italic items-start'>Pending Approval</span>
+                                )}
                             </div>
                             <div className='flex gap-3 capitalize'>
                                 <h3 className='text-2xl text-yellow-600 font-medium'>Date</h3>
@@ -56,14 +60,8 @@ export default function OpenHire({hires}) {
                                     {hire.duration}
                                 </span>
                             </div>
-                            {/* <div className='capitalize'>
-                                <span className='text-2xl text-yellow-600 font-medium'>Description:</span>
-                                <span className="text-lg text-zinc-700">
-                                    {hire.description}
-                                </span>
-                            </div>  */}
                             <div className='flex gap-2'>
-                                <a href={hire.vet} target='_blank' className='btn-lg  md:my-10 bg-black hover:text-yellow-900 hover:ring-2 ring-black'>
+                                <a href={route("hire.view", hire.id)} className='btn-lg  md:my-10 bg-black hover:text-yellow-900 hover:ring-2 ring-black'>
                                     <h3 className='text-2xl font-medium'>View</h3>
                                     <BsFolder2Open />
                                 </a>
