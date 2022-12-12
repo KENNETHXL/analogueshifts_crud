@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('hires', function (Blueprint $table) {
             $table->id();
             $table->string("user_id");
-            $table->string('display');
+            $table->string('display')->default('1');
             $table->string('status')->default('0');
             $table->string("name");
             $table->string("email");

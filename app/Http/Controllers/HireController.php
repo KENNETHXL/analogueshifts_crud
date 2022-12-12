@@ -62,7 +62,7 @@ class HireController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'display' => ['required', 'string', 'max:50'],
+            'display' => ['string', 'max:50'],
             'name' => ['required', 'string', 'min:5', 'max:50'],
             'email' => ['required', 'string', 'min:1', 'max:50', 'email'],
             'tel' => ['required', 'string', 'min:3', 'max:20'],
@@ -145,6 +145,8 @@ class HireController extends Controller
                 'hire' => $hire,
             ]);
         }
+        return redirect()->route("hire.myhire");
+
     }
 
     /**

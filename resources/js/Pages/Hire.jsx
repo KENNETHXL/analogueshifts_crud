@@ -7,7 +7,7 @@ export default function Hire(props) {
     const auth = usePage().props.auth;
 
     const {data, setData, errors, post} = useForm({
-        display: "",
+        display: "1",
         name: auth?.user?.name,
         email: auth?.user?.email,
         tel: "",
