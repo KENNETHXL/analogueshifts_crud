@@ -51,10 +51,10 @@ export default function Hire(props) {
                                 <div className='grid gap-3'>
                                     <div className='mb-1'>
                                         { errors.name && <p className='text-red-500'>{ errors.name }</p>}
-                                        <label className="block text-sm font-medium text-gray-900">Full Name*</label>
+                                        <label className="block text-sm font-medium text-gray-900">Name*</label>
                                         <input type="text" value={data.name} onChange={(e) => setData("name", e.target.value) }  
                                         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" 
-                                        placeholder='Full-Stack Developer' required/>
+                                        placeholder='AnalogueShifts' required/>
                                     </div>
                                     <div className='mb-1'>
                                         { errors.email && <p className='text-red-500'>{ errors.email }</p>}

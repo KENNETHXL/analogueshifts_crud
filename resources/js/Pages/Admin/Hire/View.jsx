@@ -66,7 +66,7 @@ export default function Hire({hire}) {
                         </span>
                     </div> 
                     <div className='flex justify-between md:justify-end gap-3 pt-3'>
-                        {auth.user.role == 'admin' || auth.user.id == hire.user_id ? (
+                        {auth.user.role == 'admin'|| 'staff' || auth.user.id == hire.user_id ? (
                             <a href={route("hire.edit", hire.id)} className='btn-lg  md:my-10 bg-black hover:text-yellow-900 hover:ring-2 ring-black'>
                                 <h3 className='text-lg font-medium'>Edit</h3>
                                 <BsFolder2Open />
