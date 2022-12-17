@@ -34,7 +34,7 @@ class HireController extends Controller
 
     public function index()
     {
-        if (auth()->user()->role == 'admin'){
+        if (auth()->user()->role == 'admin' || 'staff'){
             return Inertia::render('Admin/Hire/Index', [
                 "hires" => Hire::latest()->get(),
             ]);
@@ -112,7 +112,7 @@ class HireController extends Controller
         ->bcc('Kennethmalaka@gmail.com')
         ->send(new HireTalent($data));
 
-        if (auth()->user()->role == 'admin'){
+        if (auth()->user()->role == 'admin' || 'staff'){
             return redirect()->route("hire.index");
         }
         return redirect()->route("hire.myhire");
@@ -140,7 +140,7 @@ class HireController extends Controller
      */
     public function edit(Hire $hire)
     {
-        if (auth()->user()->role == 'admin' || auth()->user()->id == $hire->user_id ){
+        if (auth()->user()->role == 'admin' || 'staff' || auth()->user()->id == $hire->user_id ){
             return Inertia::render('Admin/Hire/Edit', [
                 'hire' => $hire,
             ]);
@@ -187,7 +187,7 @@ class HireController extends Controller
             $hire->description = $validated['description'];
             $hire->save();
 
-            if (auth()->user()->role == 'admin'){
+            if (auth()->user()->role == 'admin' || 'staff'){
                 return redirect()->route("hire.index");
             }
             return redirect()->route("hire.myhire");
@@ -202,7 +202,7 @@ class HireController extends Controller
      */
     public function delete(Hire $hire)
     {
-        if (auth()->user()->role == 'admin' || auth()->user()->id == $hire->user_id ){
+        if (auth()->user()->role == 'admin' || 'staff' || auth()->user()->id == $hire->user_id ){
             $hire->delete();
             return redirect()->route("hire.index");
         }

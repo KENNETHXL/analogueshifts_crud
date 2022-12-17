@@ -10,8 +10,8 @@ export default function Hire({hire}) {
     return (
         <Authenticated>
             <Head title="Hire" />
-            <div className='grid justify-center py-16 px-3 md:px-16 '>
-                <div className="grid gap-5 bg-yellow-50 p-3 md:p-5 rounded shadow" key={hire.id}>
+            <div className='grid py-16 px-3 md:px-16 w-full'>
+                <div className="grid gap-5 bg-yellow-50 p-3 md:p-5 rounded shadow w-full" key={hire.id}>
                     <div className='flex justify-between py-5 px-1'>
                         <ApplicationLogo />
                         {hire.status == '1' ? (
@@ -24,51 +24,51 @@ export default function Hire({hire}) {
                         Hire request by {hire.name}
                     </span>
                     <div className='flex gap-3 capitalize'>
-                        <h3 className='text-2xl text-yellow-600 font-medium'>Date</h3>
+                        <h3 className='text-lg text-yellow-600 font-medium'>Date</h3>
                         <span className="text-lg text-zinc-700">
                             {new Date(hire.updated_at).toDateString()}
                         </span>
                     </div>
                     <div className='flex gap-3 capitalize'>
-                        <h3 className='text-2xl text-yellow-600 font-medium'>Role:</h3>
+                        <h3 className='text-lg text-yellow-600 font-medium'>Role:</h3>
                         <span className="text-lg text-zinc-700">
                             {hire.role}
                         </span>
                     </div>
                     <div className='flex gap-3 capitalize'>
-                        <h3 className='text-2xl text-yellow-600 font-medium'>Location:</h3>
+                        <h3 className='text-lg text-yellow-600 font-medium'>Location:</h3>
                         <span className="text-lg text-zinc-700">
                             {hire.hire_type}
                         </span>
                     </div>
                     <div className='flex gap-3 capitalize'>
-                        <h3 className='text-2xl text-yellow-600 font-medium'>Salary Range:</h3>
+                        <h3 className='text-lg text-yellow-600 font-medium'>Salary Range:</h3>
                         <span className="text-lg text-zinc-700">
                             {hire.range}
                         </span>
                     </div>
                     <div className='flex gap-3 capitalize'>
-                        <h3 className='text-2xl text-yellow-600 font-medium'>Expirience:</h3>
+                        <h3 className='text-lg text-yellow-600 font-medium'>Expirience:</h3>
                         <span className="text-lg text-zinc-700">
                             {hire.expirience}
                         </span>
                     </div>
                     <div className='flex gap-3 capitalize'>
-                        <h3 className='text-2xl text-yellow-600 font-medium'>Job Duration:</h3>
+                        <h3 className='text-lg text-yellow-600 font-medium'>Job Duration:</h3>
                         <span className="text-lg text-zinc-700">
                             {hire.duration}
                         </span>
                     </div>
                     <div className='capitalize'>
-                        <span className='text-2xl text-yellow-600 font-medium'>Description:</span>
+                        <span className='text-lg text-yellow-600 font-medium'>Description:</span>
                         <span className="text-lg text-zinc-700">
                             {hire.description}
                         </span>
                     </div> 
-                    <div className='flex justify-between md:justify-end gap-3'>
+                    <div className='flex justify-between md:justify-end gap-3 pt-3'>
                         {auth.user.role == 'admin' || auth.user.id == hire.user_id ? (
                             <a href={route("hire.edit", hire.id)} className='btn-lg  md:my-10 bg-black hover:text-yellow-900 hover:ring-2 ring-black'>
-                                <h3 className='text-2xl font-medium'>Edit</h3>
+                                <h3 className='text-lg font-medium'>Edit</h3>
                                 <BsFolder2Open />
                             </a>
                         ):(
@@ -76,7 +76,7 @@ export default function Hire({hire}) {
                         ) }
                             
                         <a href={hire.vet} target='_blank' className='btn-lg  md:my-10 bg-yellow-900 hover:text-yellow-900 hover:ring-2 ring-black'>
-                            <h3 className='text-2xl font-medium'>Apply</h3>
+                            <h3 className='text-lg font-medium'>Apply</h3>
                             <BsArrowRight />
                         </a>
                     </div>

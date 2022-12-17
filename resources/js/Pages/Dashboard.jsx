@@ -5,6 +5,7 @@ import { GrDiamond, GrUserExpert } from 'react-icons/gr'
 import { BiStats } from 'react-icons/bi'
 import AdminTab from '@/Layouts/Components/Tabs/AdminTab';
 import UserTab from '@/Layouts/Components/Tabs/UserTab';
+import StaffTab from '@/Layouts/Components/Tabs/StaffTab';
 
 export default function Dashboard(props) {
     const auth = usePage().props.auth;
@@ -31,7 +32,13 @@ export default function Dashboard(props) {
                         {auth?.user?.role == 'admin' ? (
                             <AdminTab />
                         ):(
-                            <UserTab />
+                            <>
+                                {auth?.user?.role == 'staff' ? (
+                                    <StaffTab />
+                                ):(
+                                    <UserTab />
+                                )}
+                            </>
                         )}
 
                     </div>

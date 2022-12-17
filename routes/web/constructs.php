@@ -9,6 +9,10 @@ Route::get('/profile', function () {
     return Inertia::render('Profile');
 })->middleware(['auth', 'verified'])->name('profile');
 
+Route::get('staff', function () {
+    return Inertia::render('Admin/Staff');
+})->name('staff'); 
+
 Route::get('about', function () {
     return Inertia::render('About');
 })->name('about');

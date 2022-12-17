@@ -25,7 +25,7 @@ class LearnController extends Controller
 
     public function dashboard()
     {
-        if (auth()->user()->role == 'admin'){
+        if (auth()->user()->role == 'admin' || 'staff'){
             return Inertia::render('Admin/Learn/Index', [
                 "learns" => Learn::latest()->get(),
             ]);
@@ -36,7 +36,7 @@ class LearnController extends Controller
 
     public function create()
     {
-        if (auth()->user()->role == 'admin'){
+        if (auth()->user()->role == 'admin' || 'staff'){
             return Inertia::render('Admin/Learn/Create');
         }
         return redirect()->route("learn.all");
@@ -59,7 +59,7 @@ class LearnController extends Controller
 
     public function edit(Learn $learn)
     {
-        if (auth()->user()->role == 'admin'){
+        if (auth()->user()->role == 'admin' || 'staff'){
             return Inertia::render('Admin/Learn/Edit', [
                 'learn' => $learn,
             ]);
