@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 export default function TextInput({
-    type = 'text',
+    type,
     name,
     value,
     className,
