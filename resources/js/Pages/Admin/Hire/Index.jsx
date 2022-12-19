@@ -19,7 +19,11 @@ export default function Index({hires}) {
     <Authenticated>
 
       <Head title="Hire" />
-      <a href={route('hire.talents')} className='bg-yellow-500 p-3 rounded-lg mt-5 font-bold right-3 bottom-5 absolute'>+ New</a>
+
+      <div className='flex gap-3 right-3 bottom-5 absolute'>
+        <a href={route('hire.myhire')} className='bg-blue-500 p-3 rounded-lg mt-5 font-bold'>My Hire's</a>
+        <a href={route('hire.talents')} className='bg-yellow-500 p-3 rounded-lg mt-5 font-bold'>+ New</a>
+      </div>
       <div className="home overflow-x-auto pt-16 px-2 md:px-9">
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">

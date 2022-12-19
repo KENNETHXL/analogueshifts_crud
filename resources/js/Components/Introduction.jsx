@@ -10,16 +10,16 @@ function Introduction() {
             <div className='grid gap-5 items-center'> 
                 <h4 className="text-5xl font-black text-yellow-100">Introducing</h4>
                 <div id="carouselExampleSlidesOnly" className="grid md:flex gap-3" data-bs-ride="carousel">
-                    <h1 className='text-4xl font-black text-yellow-100'>The Future of </h1>
-                    <div className="carousel-inner">
+                    <h1 className='text-4xl font-black text-yellow-100 py-4 px-3'>The Future of </h1>
+                    <div className="bg-yellow-700 py-2 px-3 rounded-md shadow-xl shadow-black carousel-inner">
                         <div className="carousel-item active w-full">
-                            <span className='bg-yellow-700 py-2 px-3 rounded-md shadow-3xl flex items-center text-4xl font-black text-yellow-100'> Talent Recruitment</span>
+                            <span className='bg-yellow-700 py-2 px-3 rounded-md shadow-xl shadow-yellow-900 flex items-center text-4xl font-black text-yellow-100'> Talent Recruitment</span>
                         </div>
                         <div className="carousel-item relative w-full">
-                            <span className='bg-yellow-700 py-2 px-3 rounded-md shadow-3xl flex items-center text-4xl font-black text-yellow-100'> Project Management</span>
+                            <span className='bg-yellow-700 py-2 px-3 rounded-md shadow-xl shadow-yellow-900 flex items-center text-4xl font-black text-yellow-100'> Project Management</span>
                         </div>
                         <div className="carousel-item relative w-full">
-                            <span className='bg-yellow-700 py-2 px-3 rounded-md shadow-3xl flex items-center text-4xl font-black text-yellow-100'> Startup Development</span>
+                            <span className='bg-yellow-700 py-2 px-3 rounded-md shadow-xl shadow-yellow-900 flex items-center text-4xl font-black text-yellow-100'> Startup Development</span>
                         </div>
                     </div>
                 </div>

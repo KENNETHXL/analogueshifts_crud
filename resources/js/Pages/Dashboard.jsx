@@ -4,16 +4,14 @@ import { Head, Link, usePage } from '@inertiajs/inertia-react';
 import { GrDiamond, GrUserExpert } from 'react-icons/gr'
 import { BiStats } from 'react-icons/bi'
 import AdminTab from '@/Layouts/Components/Tabs/AdminTab';
-import UserTab from '@/Layouts/Components/Tabs/UserTab';
 import StaffTab from '@/Layouts/Components/Tabs/StaffTab';
+import UserTab from '@/Layouts/Components/Tabs/UserTab';
 
-export default function Dashboard(props) {
+export default function Dashboard() {
     const auth = usePage().props.auth;
 
     return (
-        <AuthenticatedLayout
-            errors={props.errors}
-        >
+        <AuthenticatedLayout>
             <Head title="Dashboard" />
 
             <div className="min-h-screen py-12">
