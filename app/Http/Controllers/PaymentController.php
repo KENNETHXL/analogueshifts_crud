@@ -46,6 +46,8 @@ class PaymentController extends Controller
             // return Payment::all();
             $payments = Payment::latest()->get();
             return Inertia::render('Admin/Payments/Index')->with('payments', $payments);
+        }elseif (auth()->user()->role == 'staff'){
+            return redirect()->route("staff");
         }
         return redirect()->route("payment.index");
         

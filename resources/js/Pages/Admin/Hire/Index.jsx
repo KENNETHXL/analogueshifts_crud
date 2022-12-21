@@ -11,7 +11,7 @@ export default function Index({hires}) {
     const deleteLearn = (id) => {
         const response = confirm("you are about to delete the application");
         if(response) {
-            remove(route("hire.delete", id));
+            remove(route("user.delete", id));
         }
     }
 

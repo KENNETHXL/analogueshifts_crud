@@ -1,5 +1,6 @@
-import Authenticated from '@/Layouts/AuthenticatedLayout';
 import React from 'react'
+import Authenticated from '@/Layouts/AuthenticatedLayout';
+import { MdOutlineDelete } from 'react-icons/md'
 
 function Index({users}) {
     return ( 
@@ -17,9 +18,6 @@ function Index({users}) {
                                 </th>
                                 <th scope="col" className="py-3 px-6">
                                     Title
-                                </th>
-                                <th scope="col" className="py-3 px-6">
-                                    Email
                                 </th>
                                 <th scope="col" className="py-3 px-6">
                                     Role
@@ -44,23 +42,17 @@ function Index({users}) {
                                             {user.name}
                                         </th>
                                         <td className="py-4 px-6">
-                                            {user.email}
-                                        </td>
-                                        <td className="py-4 px-6">
                                             {user.role}
                                         </td>
                                         <td className="py-4 px-6">
                                             {new Date(user.created_at).toDateString()}
                                         </td>
                                         <td className="flex justify-start items-cemter py-4 px-6 gap-3 text-base">
-                                            {/* <a className='flex items-center underline' href={route("user.show", user.slug)}>
+                                            <a className='flex items-center underline' href={route("user", user.id)}>
                                                 View
-                                            </a> */}
-                                            {/* <a className='flex items-center' href={route('user.edit', user.id)}>
-                                                <FiEdit3 />
-                                            </a> */}
+                                            </a>
                                             <button className='flex items-center' onClick={() => deleteLearn(user.id)}>
-                                                {/* <MdOutlineDelete /> */}D
+                                                <MdOutlineDelete />
                                             </button>
                                         </td>
                                     </tr>

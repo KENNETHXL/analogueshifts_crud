@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link, Head, useForm } from '@inertiajs/inertia-react';
+import { Link, Head, usePage, useForm } from '@inertiajs/inertia-react';
 import Authenticated from '@/Layouts/AuthenticatedLayout';
 
-export default function Edit({user}) {
+function Edit({user}) {
+    
+    const auth = usePage().props.auth;
 
     const {data, setData, errors, put} = useForm({
-        title: user.title ?? "",
-        thumbnail: "",
-        content: user.content ?? "",
-        publish: user.publish ?? false,
+        role: user.role ?? "",
     })
 
     const submit = (e) => {
@@ -21,37 +20,77 @@ export default function Edit({user}) {
         <Authenticated>
             <Head title="user" />
             <div className="home py-16 px-2">
-
-
-               <form onSubmit={submit} className="grid gap-2 bg-white p-2 md:p-9 rounded-lg border border-gray-200 shadow-md">
-                    <label className='text-2xl font-bold text-yellow-500'>Create New</label>
-                    <div className='grid gap-3'>
-                        <input type='file' accept='image/*' onChange={(e) => setData('thumbnail', e.target.files[0])}
-                            placeholder='URL here' className='rounded-lg p-3'/>
-                        { errors.thumbnail && <p className='text-red-500'>{ errors.thumbnail }</p>}
-
-                        <input type='text' placeholder='Title here' value={data.title}
-                            onChange={(e) => setData("title", e.target.value) } className='rounded-lg p-3'/>
-                        { errors.title && <p className='text-red-500'>{ errors.title }</p>}
-
-                        <textarea className='rounded-lg p-3 h-80' value={data.content}
-                            onChange={(e) => setData("content", e.target.value) } placeholder='user Content' />
-                        { errors.content && <p className='text-red-500'>{ errors.content }</p>}
-                    </div>
-
-                    <div className='flex justify-between items-center gap-9'>
-                        <div className='flex justify-center items-center gap-3'>
-                            <input type='checkbox' checked={data.publish} onChange={() => setData("publish", !data.publish)}
-                                placeholder='Publish' className='rounded-lg p-3'/>
-                            <label>Publish</label>
+               
+                <div className='grid md:grid-cols-3 gap-5 bg-white p-3 md:p-6 m-2 md:m-3 rounded-lg'>
+                    <div className='grid gap-3 md:col-span-1'>
+                        {/* profile information */}
+                        <div className="grid gap-4 w-full p-3 pt-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md relative">
+                            <form onSubmit={submit} className="flex justify-between gap-2 p-3">
+                                <div>
+                                    {auth?.user?.role == 'admin' ? (
+                                        <div className='flex items-end'>
+                                            <select value={data.role} onChange={(e) => setData("role", e.target.value) }>
+                                                <option value="admin">admin</option>
+                                                <option value="staff">staff</option>
+                                                <option value="user">user</option>
+                                                <option value="suspend">suspend</option>
+                                            </select>
+                                        </div>
+                                    ):(
+                                        <div className='flex items-end'>
+                                            <select value={data.role} onChange={(e) => setData("role", e.target.value) }>
+                                                <option value="user">user</option>
+                                                <option value="suspend">suspend</option>
+                                            </select>
+                                        </div>
+                                    )}
+                                </div>
+                                <div>
+                                    <button type="submit" name='send' className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm p-3 text-center">
+                                        Save and Submit
+                                    </button>
+                                </div>
+                            </form>
+                            <div className="flex flex-col items-center">
+                                <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src="/images/blank.png" alt="profile image"/>
+                                <h5 className="mb-1 text-xl font-medium text-gray-900">{user.name}</h5>
+                                <span className="text-sm text-gray-500 uppercase">Validation: {user.role}</span>
+                            </div>
                         </div>
-                        <button className='flex justify-center items-center bg-yellow-500 p-3 rounded-lg mt-5 font-bold'>Submit</button>
                     </div>
-
-                </form>
-
+                    <div className="grid md:col-span-2 gap-3 p-3 bg-white rounded-lg border border-gray-200 shadow-md relative">                            
+                        <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                            <header>
+                                <h2 className="text-lg font-medium text-gray-900">Profile Information</h2>
+                            </header>
+                            <div className="">
+                                <div  className="mb-6">
+                                    <label className="block m-2 text-sm font-medium text-gray-900">Name</label>
+                                    <span className="bg-white rounded-lg border border-gray-200 shadow-md px-2 py-3 mt-1 block w-full">
+                                        {user.name}
+                                    </span>
+                                </div>
+                                <div  className="mb-6">
+                                    <label className="block m-2 text-sm font-medium text-gray-900">Email</label>
+                                    <span  className="bg-white rounded-lg border border-gray-200 shadow-md px-2 py-3 mt-1 block w-full">
+                                        {user.email}
+                                    </span>
+                                </div>
+                                <div  className="mb-6">
+                                    <label className="block m-2 text-sm font-medium text-gray-900">Contact</label>
+                                    <span   className="bg-white rounded-lg border border-gray-200 shadow-md px-2 py-3 mt-1 block w-full">
+                                        {user.tel}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </Authenticated>
     );
 }
+
+export default Edit;
+

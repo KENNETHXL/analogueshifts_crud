@@ -37,7 +37,7 @@ function StaffTab() {
                         Blog Dashboard
                     </span>
                 </Link>
-                <Link href={route('staff')} className='grid justify-center gap-3 border items-center p-5 w-full rounded-lg bg-indigo-400'>
+                <Link href={route('users')} className='grid justify-center gap-3 border items-center p-5 w-full rounded-lg bg-indigo-400'>
                     <div className="flex justify-center">
                         <GrUserExpert className="w-12 h-12 border rounded-full p-2"/>
                     </div>
@@ -61,7 +61,7 @@ function StaffTab() {
                         Hire's
                     </span>
                 </Link>
-                <Link href={route('staff')} className='grid justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
+                <Link href={route('payment.records')} className='grid justify-center gap-3 border items-center p-5 w-full rounded-lg bg-green-400'>
                     <div className="flex justify-center">
                         <BsPaypal className="w-12 h-12 border rounded-full p-2"/>
                     </div>

@@ -19,6 +19,11 @@ class AllController extends Controller
             return Inertia::render('Admin/Users/Index', [
                 "users" => User::latest()->get(),
             ]);
+        }
+        elseif (auth()->user()->role == 'staff'){
+            return Inertia::render('Admin/Users/Index', [
+                "users" => User::where('role', 'user')->latest()->get(),
+            ]);
         }        
         return Inertia::render('Dashboard');
 
@@ -69,6 +74,11 @@ class AllController extends Controller
                 'user' => $user,
             ]);
         }
+        elseif (auth()->user()->role == 'staff'){
+            return Inertia::render('Admin/Users/Edit', [
+                'user' => $user::where('role', 'user'),
+            ]);
+        }        
         return redirect()->route("dashboard");
     }
 
@@ -79,9 +89,15 @@ class AllController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $validated = $request->validate([
+            'role' => ['required', 'string', 'max:50'],
+        ]);
+
+            $user->role = $validated['role'];
+            $user->save();
+            return redirect()->route("users");
     }
 
     /**
@@ -90,8 +106,12 @@ class AllController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if (auth()->user()->role == 'admin' || 'staff'){
+            $user->delete();
+            return redirect()->route("users");
+        }
+        return redirect()->route("dashboard");
     }
 }
