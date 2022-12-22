@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, Head, useForm } from '@inertiajs/inertia-react';
 import Authenticated from '@/Layouts/AuthenticatedLayout'
-import { FiEdit3 } from 'react-icons/fi'
 import { MdOutlineDelete } from 'react-icons/md'
 
 export default function MyHire({hires}) {
@@ -85,6 +84,9 @@ export default function MyHire({hires}) {
                   <td className="flex justify-start items-cemter py-4 px-6 gap-3 text-base">
                     <a className='flex items-center underline' href={route("hire.view", hire.id)}>
                       Details
+                    </a>
+                    <a href={route("hire.edit", hire.id)} className='flex items-center underline'>
+                      <h3 className='text-lg font-medium'>Edit</h3>
                     </a>
                     <button className='flex items-center' onClick={() => deleteLearn(hire.id)}>
                       <MdOutlineDelete />

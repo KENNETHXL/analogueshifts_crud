@@ -19,13 +19,12 @@ class AllController extends Controller
             return Inertia::render('Admin/Users/Index', [
                 "users" => User::latest()->get(),
             ]);
-        }
-        elseif (auth()->user()->role == 'staff'){
+        }elseif (auth()->user()->role == 'staff') {
             return Inertia::render('Admin/Users/Index', [
-                "users" => User::where('role', 'user')->latest()->get(),
+                "users" => User::latest()->get(),
             ]);
-        }        
-        return Inertia::render('Dashboard');
+        }
+        return redirect()->route("dashboard");
 
     }
 
@@ -76,7 +75,7 @@ class AllController extends Controller
         }
         elseif (auth()->user()->role == 'staff'){
             return Inertia::render('Admin/Users/Edit', [
-                'user' => $user::where('role', 'user'),
+                'user' => $user,
             ]);
         }        
         return redirect()->route("dashboard");
@@ -108,10 +107,13 @@ class AllController extends Controller
      */
     public function destroy(User $user)
     {
-        if (auth()->user()->role == 'admin' || 'staff'){
+        if (auth()->user()->role == 'admin'){
             $user->delete();
             return redirect()->route("users");
-        }
+        }elseif (auth()->user()->role == 'staff'){
+            $user->delete();
+            return redirect()->route("users");
+        }        
         return redirect()->route("dashboard");
     }
 }

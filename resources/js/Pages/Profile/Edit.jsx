@@ -12,13 +12,8 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
         >
             <div className="min-h-screen py-12">
                 <div className="max-w-7xl mx-auto px-3 md:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">Welcome Back, We miss you!</div>
-                    </div>
-
                     {/* user profile information */}
                     <div className='grid md:grid-cols-3 gap-5 bg-white p-3 md:p-6 m-2 md:m-3 rounded-lg'>
-                        
                         <div className='grid gap-3 md:col-span-1'>
                             <Profile />
                             <div className="grid md:col-span-1 p-3 bg-white rounded-lg border border-gray-200 shadow-md">
@@ -27,7 +22,6 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                                 </div>
                             </div>
                         </div>
-
                         <div className="grid md:col-span-2 gap-3 p-3 bg-white rounded-lg border border-gray-200 shadow-md relative">                            
                             <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                                 <UpdateProfileInformationForm

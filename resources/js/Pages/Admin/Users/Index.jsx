@@ -2,7 +2,7 @@ import React from 'react'
 import Authenticated from '@/Layouts/AuthenticatedLayout';
 import { MdOutlineDelete } from 'react-icons/md'
 
-function Index({users}) {
+function Index({ admins, staffs, users, suspends }) {
     return ( 
         <Authenticated>
         

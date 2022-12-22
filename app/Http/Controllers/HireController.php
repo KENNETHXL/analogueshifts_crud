@@ -34,7 +34,11 @@ class HireController extends Controller
 
     public function index()
     {
-        if (auth()->user()->role == 'admin' || 'staff'){
+        if (auth()->user()->role == 'admin'){
+            return Inertia::render('Admin/Hire/Index', [
+                "hires" => Hire::latest()->get(),
+            ]);
+        }elseif (auth()->user()->role == 'staff') {
             return Inertia::render('Admin/Hire/Index', [
                 "hires" => Hire::latest()->get(),
             ]);
@@ -112,7 +116,7 @@ class HireController extends Controller
         ->bcc('Kennethmalaka@gmail.com')
         ->send(new HireTalent($data));
 
-        if (auth()->user()->role == 'admin' || 'staff'){
+        if (auth()->user()->role == 'admin'){
             return redirect()->route("hire.index");
         }
         return redirect()->route("hire.myhire");
@@ -140,7 +144,15 @@ class HireController extends Controller
      */
     public function edit(Hire $hire)
     {
-        if (auth()->user()->role == 'admin' || 'staff' || auth()->user()->id == $hire->user_id ){
+        if (auth()->user()->role == 'admin' ){
+            return Inertia::render('Admin/Hire/Edit', [
+                'hire' => $hire,
+            ]);
+        }elseif (auth()->user()->role == 'staff') {
+            return Inertia::render('Admin/Hire/Edit', [
+                'hire' => $hire,
+            ]);
+        }elseif (auth()->user()->id == $hire->user_id) {
             return Inertia::render('Admin/Hire/Edit', [
                 'hire' => $hire,
             ]);
@@ -187,7 +199,7 @@ class HireController extends Controller
             $hire->description = $validated['description'];
             $hire->save();
 
-            if (auth()->user()->role == 'admin' || 'staff'){
+            if (auth()->user()->role == 'admin'){
                 return redirect()->route("hire.index");
             }
             return redirect()->route("hire.myhire");
@@ -202,7 +214,13 @@ class HireController extends Controller
      */
     public function delete(Hire $hire)
     {
-        if (auth()->user()->role == 'admin' || 'staff' || auth()->user()->id == $hire->user_id ){
+        if (auth()->user()->role == 'admin'){
+            $hire->delete();
+            return redirect()->route("hire.index");
+        }elseif (auth()->user()->role == 'staff') {
+            $hire->delete();
+            return redirect()->route("hire.index");
+        }elseif (auth()->user()->id == $hire->user_id) {
             $hire->delete();
             return redirect()->route("hire.index");
         }

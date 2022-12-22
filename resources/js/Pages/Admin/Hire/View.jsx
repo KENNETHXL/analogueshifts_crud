@@ -1,6 +1,6 @@
 import React from 'react';import { Link, Head, usePage } from '@inertiajs/inertia-react';
 import Authenticated from '@/Layouts/AuthenticatedLayout'
-import {BsArrowRight, BsFolder2Open} from 'react-icons/bs';
+import {BsArrowRight} from 'react-icons/bs';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 
 export default function Hire({hire}) {
@@ -65,16 +65,7 @@ export default function Hire({hire}) {
                             {hire.description}
                         </span>
                     </div> 
-                    <div className='flex justify-between md:justify-end gap-3 pt-3'>
-                        {auth.user.role == 'admin'|| 'staff' || auth.user.id == hire.user_id ? (
-                            <a href={route("hire.edit", hire.id)} className='btn-lg  md:my-10 bg-black hover:text-yellow-900 hover:ring-2 ring-black'>
-                                <h3 className='text-lg font-medium'>Edit</h3>
-                                <BsFolder2Open />
-                            </a>
-                        ):(
-                            null
-                        ) }
-                            
+                    <div className='flex justify-end md:justify-end gap-3 pt-3'>
                         <a href={hire.vet} target='_blank' className='btn-lg  md:my-10 bg-yellow-900 hover:text-yellow-900 hover:ring-2 ring-black'>
                             <h3 className='text-lg font-medium'>Apply</h3>
                             <BsArrowRight />

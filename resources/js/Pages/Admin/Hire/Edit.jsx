@@ -35,7 +35,7 @@ export default function Edit({hire}) {
                 <form onSubmit={submit} className='grid gap-3 bg-white p-3 md:p-6 m-2 md:m-3 rounded-lg'>
 
                     <div className='flex justify-between'>
-                        {auth?.user?.role == 'admin' || 'staff' ? (
+                        {auth?.user?.role == 'admin' ? (
                             <div className='flex items-end'>
                                 <select value={data.status} onChange={(e) => setData("status", e.target.value) }>
                                     <option value="1">Approved</option>
@@ -43,13 +43,24 @@ export default function Edit({hire}) {
                                 </select>
                             </div>
                         ):(
-                            <div>
-                                {hire.status == '1' ? (
-                                    <span className='flex text-green-500 text-xs font-bold italic items-start'>Approved</span>
+                            <>
+                                {auth?.user?.role == 'staff' ? (
+                                    <div className='flex items-end'>
+                                        <select value={data.status} onChange={(e) => setData("status", e.target.value) }>
+                                            <option value="1">Approved</option>
+                                            <option value="0">Pending</option>
+                                        </select>
+                                    </div>
                                 ):(
-                                    <span className='flex text-red-500 text-xs font-bold italic items-start'>Pending Approval</span>
+                                    <div>
+                                        {hire.status == '1' ? (
+                                            <span className='flex text-green-500 text-xs font-bold italic items-start'>Approved</span>
+                                        ):(
+                                            <span className='flex text-red-500 text-xs font-bold italic items-start'>Pending Approval</span>
+                                        )}
+                                    </div>
                                 )}
-                            </div>
+                            </>
                         )}
                         <div className='flex gap-3'>
                         {auth?.user.id == hire.user_id ? (
@@ -62,7 +73,7 @@ export default function Edit({hire}) {
                         )}
                             
                             <button type="submit" name='send' className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                Save and Submit
+                                Save
                             </button>
                         </div>
                     </div>                    

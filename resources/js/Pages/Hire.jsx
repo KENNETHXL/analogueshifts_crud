@@ -33,13 +33,13 @@ export default function Hire(props) {
 
                 <form onSubmit={submit} className='grid gap-3 bg-white p-3 md:p-6 m-2 md:m-3 rounded-lg'>
 
-                    <div className='flex justify-end gap-3'>
+                    <div className='flex justify-between gap-3'>
                         <select value={data.display} onChange={(e) => setData("display", e.target.value) }>
                             <option value="1">Live</option>
                             <option value="0">Offline</option>
                         </select>
                         <button type="submit" name='send' className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                            Save and Submit
+                            Submit
                         </button>
                     </div>                 
 
