@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link, Head, usePage, useForm } from '@inertiajs/inertia-react';
 import Authenticated from '@/Layouts/AuthenticatedLayout';
-import { MdOutlineDelete } from 'react-icons/md'
+// import { MdOutlineDelete } from 'react-icons/md'
 
-function Index({ admins, staffs, users, suspends }) {
+function Index({ users }) {
+
+    const auth = usePage().props.auth;
+
     return ( 
         <Authenticated>
         
@@ -51,9 +55,10 @@ function Index({ admins, staffs, users, suspends }) {
                                             <a className='flex items-center underline' href={route("user", user.id)}>
                                                 View
                                             </a>
-                                            <button className='flex items-center' onClick={() => deleteLearn(user.id)}>
+                                            {/* <button className='flex items-center' onClick={() => deleteLearn(user.id)}>
                                                 <MdOutlineDelete />
-                                            </button>
+                                            </button> */}
+                                         
                                         </td>
                                     </tr>
                                 ))}

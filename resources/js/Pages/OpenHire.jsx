@@ -15,7 +15,7 @@ export default function OpenHire({hires, hiresPending}) {
                 <div className="grid md:grid-cols-3 justify-center gap-3 py-16 px-2 md:px-9">
                 
                     {hires.map(hire => (
-                        <div className="grid justify-center gap-2 bg-yellow-50 p-3 md:p-5 rounded shadow" key={hire.id}>
+                        <div className="grid justify-center gap-2 bg-yellow-50 p-5 rounded shadow" key={hire.id}>
                             <div className='flex justify-between py-5 px-1'>
                                 <ApplicationLogo />
                                 {hire.status == '1' ? (
@@ -61,12 +61,12 @@ export default function OpenHire({hires, hiresPending}) {
                                 </span>
                             </div>
                             <div className='flex gap-2 pt-3'>
-                                <a href={route("hire.view", hire.id)} className='btn-lg  md:my-10 bg-black hover:text-yellow-900 hover:ring-2 ring-black'>
-                                    <h3 className='text-lg font-medium'>View</h3>
+                                <a href={route("hire.view", hire.id)} className='flex justify-center w-full text-white items-center gap-3 rounded-lg py-3 px-5 bg-black hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>
+                                    <h3 className='text-lg'>View</h3>
                                     <BsFolder2Open />
                                 </a>
-                                <a href={hire.vet} target='_blank' className='btn-lg  md:my-10 bg-yellow-900 hover:text-yellow-900 hover:ring-2 ring-black'>
-                                    <h3 className='text-lg font-medium'>Apply</h3>
+                                <a href={hire.vet} target='_blank' className='flex justify-center w-full text-white items-center gap-3 rounded-lg py-3 px-5 bg-yellow-900 hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>
+                                    <h3 className='text-lg'>Apply</h3>
                                     <BsArrowRight />
                                 </a>
                             </div>

@@ -18,7 +18,7 @@ function Edit({user}) {
 
     return (
         <Authenticated>
-            <Head title="user" />
+            <Head title="User" />
             <div className="home py-16 px-2">
                
                 <div className='grid md:grid-cols-3 gap-5 bg-white p-3 md:p-6 m-2 md:m-3 rounded-lg'>
@@ -64,16 +64,20 @@ function Edit({user}) {
                                         </>
                                     ):(
                                         <>
-                                            {user.role == 'staff' ? (null):(
-                                                <div  className="flex justify-between gap-2 p-3">
-                                                    <select value={data.role} onChange={(e) => setData("role", e.target.value) }>
-                                                        <option value="user">user</option>
-                                                        <option value="suspend">suspend</option>
-                                                    </select>
-                                                    <button type="submit" name='send' className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm p-3 text-center">
-                                                        Save and Submit
-                                                    </button>
-                                                </div>
+                                            {user.role == 'admin' ? (null):(
+                                                <>
+                                                    {user.role == 'staff' ? (null):(
+                                                        <div  className="flex justify-between gap-2 p-3">
+                                                            <select value={data.role} onChange={(e) => setData("role", e.target.value) }>
+                                                                <option value="user">user</option>
+                                                                <option value="suspend">suspend</option>
+                                                            </select>
+                                                            <button type="submit" name='send' className="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm p-3 text-center">
+                                                                Save and Submit
+                                                            </button>
+                                                        </div>
+                                                    )}
+                                                </>
                                             )}
                                         </>
                                     )}

@@ -111,7 +111,6 @@ class AllController extends Controller
             $user->delete();
             return redirect()->route("users");
         }elseif (auth()->user()->role == 'staff'){
-            $user->delete();
             return redirect()->route("users");
         }        
         return redirect()->route("dashboard");

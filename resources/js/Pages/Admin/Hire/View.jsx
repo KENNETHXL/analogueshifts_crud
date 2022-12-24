@@ -66,7 +66,7 @@ export default function Hire({hire}) {
                         </span>
                     </div> 
                     <div className='flex justify-end md:justify-end gap-3 pt-3'>
-                        <a href={hire.vet} target='_blank' className='btn-lg  md:my-10 bg-yellow-900 hover:text-yellow-900 hover:ring-2 ring-black'>
+                        <a href={hire.vet} target='_blank' className='flex justify-center text-white items-center gap-3 rounded-lg py-3 px-5 bg-yellow-900 hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>
                             <h3 className='text-lg font-medium'>Apply</h3>
                             <BsArrowRight />
                         </a>
