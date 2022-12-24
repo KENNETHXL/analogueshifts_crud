@@ -19,6 +19,9 @@ class HireController extends Controller
      */
     public function all()
     {
+        if (auth()->user()->role == 'suspend'){
+            return redirect()->route("suspend");
+        }
         return Inertia::render('OpenHire', [
             "hires" => Hire::where('display', '1')->latest()->get(),
             // "hires" => Hire::latest()->get(),
@@ -27,6 +30,9 @@ class HireController extends Controller
 
     public function myhire()
     {
+        if (auth()->user()->role == 'suspend'){
+            return redirect()->route("suspend");
+        }
         return Inertia::render('MyHire', [
             "hires" => Hire::where('user_id', auth()->user()->id)->latest()->get(),
         ]);
@@ -54,6 +60,9 @@ class HireController extends Controller
      */
     public function create()
     {
+        if (auth()->user()->role == 'suspend'){
+            return redirect()->route("suspend");
+        }
         return Inertia::render('Hire');
     }
 
@@ -131,6 +140,9 @@ class HireController extends Controller
      */
     public function show(Hire $hire)
     {
+        if (auth()->user()->role == 'suspend'){
+            return redirect()->route("suspend");
+        }
         return Inertia::render("Admin/Hire/View", [
             "hire" => $hire,
         ]);
@@ -156,6 +168,8 @@ class HireController extends Controller
             return Inertia::render('Admin/Hire/Edit', [
                 'hire' => $hire,
             ]);
+        }elseif (auth()->user()->role == 'suspend'){
+            return redirect()->route("suspend");
         }
         return redirect()->route("hire.myhire");
 

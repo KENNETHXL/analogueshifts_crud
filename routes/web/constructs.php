@@ -23,6 +23,10 @@ Route::get('staff', function () {
     return Inertia::render('Admin/Staff');
 })->name('staff'); 
 
+Route::get('suspend', function () {
+    return Inertia::render('Suspend');
+})->name('suspend');
+
 Route::get('construction', function () {
     return Inertia::render('Construction');
-})->name('construction');    
+})->name('construction');  

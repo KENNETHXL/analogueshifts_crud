@@ -17,7 +17,14 @@ export default function Dashboard() {
             <div className="min-h-screen py-12">
                 <div className="grid gap-3 max-w-7xl mx-auto px-3 md:px-8">
                     <div className="grid md:flex md:justify-between bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">Welcome Back, We miss you!</div>
+                        {auth.user.role == 'suspend' ? (
+                            <div className="flex justify-between md:justify-start items-center gap-2 p-6 text-red-500 border-b border-gray-200">
+                                <span>Account Suspended</span>
+                                <a className='p-3 underline' href={route('suspend')}>?</a>
+                            </div>
+                        ):(
+                            <div className="p-6 border-b border-gray-200">Welcome Back, We miss you!</div>
+                        )}
                         <Link href={route('profile')} className='flex justify-between gap-3 items-center p-2 md:p-0'>
                             <span>{auth?.user?.name}</span>
                             <span className='border rounded-full p-5'>

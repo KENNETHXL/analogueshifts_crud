@@ -19,6 +19,9 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
+        if (auth()->user()->role == 'suspend'){
+            return redirect()->route("suspend");
+        }
         return Inertia::render('Profile/Edit', [
             'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
             'status' => session('status'),
