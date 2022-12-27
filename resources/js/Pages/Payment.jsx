@@ -59,7 +59,7 @@ return (
             <div className="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8">
                 <h5 className="mb-4 text-lg font-medium text-gray-500">Make Payment</h5>
                 <div className="grid items-baseline gap-1">
-                    <label className="text-lg font-semibold" >Amount in Naira</label>
+                    <label className="text-lg font-semibold" >Amount in Dollar ($)</label>
                     <input type='number' className='' name="amount" value={state.amount}
                            onChange={handleChange} required />
                     <label className="text-lg font-semibold">Tel</label>
