@@ -1,7 +1,7 @@
 
 function Cards() {
     return ( 
-        <section id="top" className="card-section">
+        <section id="top" className="bg-yellow-50 card-section">
 
             <div className="p-5 md:p-20 space-y-32 bg">
                 

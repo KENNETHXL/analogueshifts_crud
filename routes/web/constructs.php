@@ -2,8 +2,10 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConstructsController;
 use App\Http\Controllers\AllController;
 
+Route::get('/', [ConstructsController::class, "index"])->name('home');
 
 Route::middleware(['auth', 'verified'])->prefix("dashboard")->group(function () {
     Route::get('/users', [AllController::class, "index"])->name('users');

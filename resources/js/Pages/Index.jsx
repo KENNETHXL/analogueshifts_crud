@@ -5,6 +5,7 @@ import Introduction from "@/Components/Introduction";
 import Companies from "@/Components/Companies";
 import BuildTeam from "@/Components/BuildTeam";
 import Cards from "@/Components/Cards";
+import { HiresComp } from '@/Pages/OpenHire';
 import About from "@/Components/About";
 
 export default function Welcome(props) {
@@ -17,6 +18,7 @@ export default function Welcome(props) {
                 <Companies />
                 <BuildTeam />
                 <Cards />
+                <HiresComp hires={props.hires} />
                 {/* <About/> */}
                 
             </div>
