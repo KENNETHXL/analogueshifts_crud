@@ -12,18 +12,20 @@ import {FcAssistant} from 'react-icons/fc';
 function BuildTeam() {
     return ( 
         <div id='talent' className="build-team">
-            <div className='grid md:grid-cols-7 gap-3 space-y-9'>
-                <div className='grid md:col-span-2 justify-center'>
-                    <img className='w-80 h-96 rounded-lg' src='images/rod.jpg' alt=''/>
-                </div>
-                <div className='grid md:col-span-5'>
-                    <div className='space-y-5 text-center'>
+            <div className='grid gap-3 space-y-9 relative'>
+                <img className='h-[400px] w-[400px] rounded-lg' src='images/rod.jpg' alt=''/>
+                <div className='flex flex-col gap-10 md:items-end md:absolute'>
+                    <div className='bg-white md:w-3/4 rounded-lg shadow-lg space-y-5 p-5'>
                         <h1 className='heading'>
                             Talent Acquisition
                         </h1>
                         <p className="description">
                             A solutions-oriented, best in class talent acquisition service. Analogue shifts feature a wide range of curated jobs in tech. You can search our virtual job board for openings, go through the vetting process and post your resume to be searched and seen by prospective employers. Our workforce management solutions also help companies attract professionals from all functional areas to fill specific internal or external positions.
                         </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
                     </div>
                 </div>
             </div>

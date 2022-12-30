@@ -27,7 +27,7 @@ export function HiresComp({hires}){
             <h1 className='text-4xl capitalize text-darkBlue font-semibold'>
                 Talent as a service.
             </h1>
-            <div className="grid md:grid-cols-3 md:grid-cols-4 justify-center gap-5">
+            <div className="grid md:grid-cols-3 justify-center gap-5">
                 {hires.map(hire => (
                     <div className="grid justify-center gap-2 bg-yellow-50 p-5 rounded shadow" key={hire.id}>
                         <div className='flex justify-between py-5 px-1'>
@@ -86,6 +86,7 @@ export function HiresComp({hires}){
                         </div>
                     </div>
                 ))}
+                {/* {hires.links()} */}
             </div>
         </div>
     )

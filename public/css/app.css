@@ -4302,6 +4302,9 @@ textarea.form-control.is-invalid {
 .h-12 {
   height: 3rem;
 }
+.h-\[500px\] {
+  height: 500px;
+}
 .h-24 {
   height: 6rem;
 }
@@ -4317,8 +4320,14 @@ textarea.form-control.is-invalid {
 .h-6 {
   height: 1.5rem;
 }
-.h-\[500px\] {
-  height: 500px;
+.h-\[50px\] {
+  height: 50px;
+}
+.h-\[450px\] {
+  height: 450px;
+}
+.h-\[400px\] {
+  height: 400px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -4337,6 +4346,12 @@ textarea.form-control.is-invalid {
 }
 .w-12 {
   width: 3rem;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-3\/4 {
+  width: 75%;
 }
 .w-24 {
   width: 6rem;
@@ -4359,20 +4374,17 @@ textarea.form-control.is-invalid {
 .w-6 {
   width: 1.5rem;
 }
-.w-3\/4 {
-  width: 75%;
-}
 .w-96 {
   width: 24rem;
 }
-.w-3\/5 {
-  width: 60%;
+.w-\[50px\] {
+  width: 50px;
 }
-.w-2\/5 {
-  width: 40%;
+.w-\[450px\] {
+  width: 450px;
 }
-.w-4\/5 {
-  width: 80%;
+.w-\[400px\] {
+  width: 400px;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -4452,9 +4464,6 @@ textarea.form-control.is-invalid {
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.grid-cols-7 {
-  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
@@ -4773,9 +4782,9 @@ textarea.form-control.is-invalid {
 .bg-transparent {
   background-color: transparent;
 }
-.bg-yellow-100 {
+.bg-red-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 .bg-\[url\(\'\/images\/isolated\.jpg\'\)\] {
   background-image: url('/images/isolated.jpg');
@@ -4884,10 +4893,6 @@ textarea.form-control.is-invalid {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
-.px-52 {
-  padding-left: 13rem;
-  padding-right: 13rem;
-}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -4924,9 +4929,6 @@ textarea.form-control.is-invalid {
 .pb-10 {
   padding-bottom: 2.5rem;
 }
-.pl-16 {
-  padding-left: 4rem;
-}
 .text-left {
   text-align: left;
 }
@@ -4935,9 +4937,6 @@ textarea.form-control.is-invalid {
 }
 .text-justify {
   text-align: justify;
-}
-.text-start {
-  text-align: start;
 }
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -5166,14 +5165,14 @@ textarea.form-control.is-invalid {
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.shadow-2xl {
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .shadow-xl {
@@ -5606,6 +5605,10 @@ textarea.form-control.is-invalid {
 }
 @media (min-width: 768px) {
 
+  .md\:absolute {
+    position: absolute;
+  }
+
   .md\:inset-0 {
     top: 0px;
     right: 0px;
@@ -5619,10 +5622,6 @@ textarea.form-control.is-invalid {
 
   .md\:col-span-3 {
     grid-column: span 3 / span 3;
-  }
-
-  .md\:col-span-5 {
-    grid-column: span 5 / span 5;
   }
 
   .md\:col-span-1 {
@@ -5640,10 +5639,6 @@ textarea.form-control.is-invalid {
 
   .md\:mt-0 {
     margin-top: 0px;
-  }
-
-  .md\:ml-16 {
-    margin-left: 4rem;
   }
 
   .md\:flex {
@@ -5690,12 +5685,12 @@ textarea.form-control.is-invalid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-7 {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
   }
 
   .md\:justify-start {
@@ -5772,11 +5767,6 @@ textarea.form-control.is-invalid {
     padding-right: 3rem;
   }
 
-  .md\:px-20 {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -5792,6 +5782,10 @@ textarea.form-control.is-invalid {
   }
 }
 @media (min-width: 1024px) {
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 
   .lg\:prose-xl {
     font-size: 1.25rem;
