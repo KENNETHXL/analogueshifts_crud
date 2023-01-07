@@ -33,7 +33,7 @@ export function HiresComp({hires}){
                 {hires.map(hire => (
                     <div className="grid gap-2 bg-white p-5 rounded shadow" key={hire.id}>
                         <div className='flex justify-between py-5 px-1'>
-                            <ApplicationLogo />
+                            <img src={hire.logoURL} alt={hire.companyName} className='h-9 w-9' />
                             {hire.status == '1' ? (
                                 <span className='flex text-green-500 text-xs font-bold italic items-start'>Approved</span>
                             ):(
@@ -52,7 +52,7 @@ export function HiresComp({hires}){
                                 {hire.role}
                             </span>
                         </div>
-                        <div className='flex gap-3 capitalize'>
+                        <div className='grid gap-3 capitalize'>
                             <h3 className='text-lg text-yellow-600 font-medium'>Job Duration:</h3>
                             <span className="text-lg text-zinc-700">
                                 {hire.description.slice(0, 100)}...

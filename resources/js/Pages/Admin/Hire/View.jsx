@@ -13,7 +13,7 @@ export default function Hire({hire}) {
             <div className='grid py-16 px-3 md:px-16 w-full'>
                 <div className="grid gap-5 bg-yellow-50 p-3 md:p-5 rounded shadow w-full" key={hire.id}>
                     <div className='flex justify-between py-5 px-1'>
-                        <ApplicationLogo />
+                        <img src={hire.logoURL} alt={hire.companyName} className='h-9 w-9' />
                         {hire.status == '1' ? (
                             <span className='flex text-green-500 text-xs font-bold italic items-start'>Approved</span>
                         ):(
@@ -59,7 +59,7 @@ export default function Hire({hire}) {
                             {hire.duration}
                         </span>
                     </div>
-                    <div className='capitalize'>
+                    <div className='grid gap-3 capitalize'>
                         <span className='text-lg text-yellow-600 font-medium'>Description:</span>
                         <span className="text-lg text-zinc-700">
                             {hire.description}
