@@ -86,10 +86,10 @@ export default function Index({hires}) {
                     {new Date(hire.created_at).toDateString()}
                   </td>
                   <td className="flex justify-start items-cemter py-4 px-6 gap-3 text-base">
-                    <a className='flex items-center underline' href={route("hire.view", hire.id)}>
+                    <a className='flex items-center underline' href={route("hire.view", hire.slug)}>
                       Details
                     </a>
-                    <a href={route("hire.edit", hire.id)} className='flex items-center underline'>
+                    <a href={route("hire.edit", hire.slug)} className='flex items-center underline'>
                       <h3 className='text-lg font-medium'>Edit</h3>
                     </a>
                     <button className='flex items-center' onClick={() => deleteLearn(hire.id)}>

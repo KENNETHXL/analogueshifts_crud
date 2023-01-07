@@ -4,7 +4,7 @@
     @apply px-0 gap-5 min-h-screen;
 
     .build-team{
-        @apply grid justify-center p-3 md:p-9 pt-20 space-y-16;
+        @apply grid justify-center;
 
         .heading{
             @apply text-3xl font-medium text-yellow-500;
@@ -16,19 +16,19 @@
         }
 
         .cards{
-            @apply grid md:grid-cols-3 gap-3;
+            @apply bg-black grid md:grid-cols-3 gap-3 p-3 md:p-24 pt-20;
 
             .card{
-                @apply grid justify-center bg-yellow-50 rounded p-5 space-y-5 cursor-pointer 
+                @apply grid justify-center gap-3 bg-transparent rounded p-5 space-y-5 cursor-pointer 
                     md:hover:scale-90 shadow;
                     // height: 500px;
 
                 .title{
-                    @apply text-2xl text-yellow-600 font-medium;
+                    @apply text-2xl text-white font-medium;
                 }
 
                 .details {
-                    @apply text-lg text-zinc-700;
+                    @apply text-lg text-white;
                 }
 
                 .btn-lg{

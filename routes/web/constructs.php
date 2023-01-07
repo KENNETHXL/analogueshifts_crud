@@ -9,7 +9,7 @@ Route::get('/', [ConstructsController::class, "index"])->name('home');
 
 Route::middleware(['auth', 'verified'])->prefix("dashboard")->group(function () {
     Route::get('/users', [AllController::class, "index"])->name('users');
-    Route::get('/user/{user:id}', [AllController::class, "edit"])->name('user');
+    Route::get('/user/{user:username}', [AllController::class, "edit"])->name('user');
     Route::put('/{user}', [AllController::class, "update"])->name('user.update');
 });
 

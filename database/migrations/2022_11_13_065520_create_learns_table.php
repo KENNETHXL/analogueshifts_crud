@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('learns', function (Blueprint $table) {
             $table->id();
+            $table->string("user_id")->default(1);
             $table->string("title")->unique();
             $table->string("slug")->unique();
             $table->string("url")->unique();

@@ -8,6 +8,7 @@ use App\Models\Hire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class HireController extends Controller
@@ -79,6 +80,8 @@ class HireController extends Controller
             'name' => ['required', 'string', 'min:5', 'max:50'],
             'email' => ['required', 'string', 'min:1', 'max:50', 'email'],
             'tel' => ['required', 'string', 'min:3', 'max:20'],
+            'companyName' => ['string', 'min:1', 'max:50'],
+            'logoURL' => ['string', 'min:3', 'max:50'],
             'role' => ['required', 'string', 'min:1', 'max:50'],
             'vet' => ['required', 'string', 'min:1', 'max:50'],
             'hire_type' => ['required', 'string', 'min:3', 'max:50'],
@@ -89,11 +92,14 @@ class HireController extends Controller
         ]);
 
         Hire::create([
+            'slug' => Str::random(33),
             'user_id' => auth()->id(),
             "display" => $validated['display'],
             "name" => $validated['name'],
             "email" => $validated['email'],
             "tel" => $validated['tel'],
+            "companyName" => $validated['companyName'],
+            "logoURL" => $validated['logoURL'],
             "role" => $validated['role'],
             "hire_type" => $validated['hire_type'],
             "range" => $validated['range'],
@@ -109,6 +115,7 @@ class HireController extends Controller
         $data = array(
             "name" => $validated['name'],
             "email" => $validated['email'],
+            "companyName" => $validated['companyName'],
             "tel" => $validated['tel'],
             "role" => $validated['role'],
             "hire_type" => $validated['hire_type'],
@@ -190,6 +197,8 @@ class HireController extends Controller
             'name' => ['required', 'string', 'min:5', 'max:50'],
             'email' => ['required', 'string', 'min:1', 'max:50', 'email'],
             'tel' => ['required', 'string', 'min:3', 'max:20'],
+            'companyName' => ['string', 'min:1', 'max:50'],
+            'logoURL' => ['string', 'min:3', 'max:50'],
             'role' => ['required', 'string', 'min:1', 'max:50'],
             'vet' => ['required', 'string', 'min:1', 'max:50'],
             'hire_type' => ['required', 'string', 'min:3', 'max:50'],
@@ -204,6 +213,8 @@ class HireController extends Controller
             $hire->name = $validated['name'];
             $hire->email = $validated['email'];
             $hire->tel = $validated['tel'];
+            $hire->companyName = $validated['companyName'];
+            $hire->logoURL = $validated['logoURL'];
             $hire->role = $validated['role'];
             $hire->hire_type = $validated['hire_type'];
             $hire->range = $validated['range'];

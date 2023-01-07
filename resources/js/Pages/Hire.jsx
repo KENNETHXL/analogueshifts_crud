@@ -10,6 +10,8 @@ export default function Hire(props) {
         display: "1",
         name: auth?.user?.name,
         email: auth?.user?.email,
+        companyName: "",
+        logoURL: "",
         tel: "",
         vet: "",
         role: "",
@@ -47,7 +49,7 @@ export default function Hire(props) {
                        
                         <div className="grid md:col-span-1 p-3 bg-white rounded-lg border border-gray-200 shadow-md">
                             <div>
-                                <label className="block mb-3 text-sm font-medium text-gray-900">Contacts</label>
+                                <label className="block mb-3 text-sm font-medium text-gray-900">Contacts -Required (*)</label>
                                 <div className='grid gap-3'>
                                     <div className='mb-1'>
                                         { errors.name && <p className='text-red-500'>{ errors.name }</p>}
@@ -69,6 +71,25 @@ export default function Hire(props) {
                                         <input type="tel" value={data.tel} onChange={(e) => setData("tel", e.target.value) }  
                                         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" 
                                         placeholder='+2348012345678' required/>
+                                    </div>
+                                </div>
+                            </div>           
+                            <div>
+                                <label className="block mb-3 text-sm font-medium text-gray-900">Advance info</label>
+                                <div className='grid gap-3'>
+                                    <div className='mb-1'>
+                                        { errors.companyName && <p className='text-red-500'>{ errors.companyName }</p>}
+                                        <label className="block text-sm font-medium text-gray-900">Company Name</label>
+                                        <input type="text" value={data.companyName} onChange={(e) => setData("companyName", e.target.value) }  
+                                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" 
+                                        placeholder='AnalogueShifts' />
+                                    </div>
+                                    <div className='mb-1'>
+                                        { errors.logoURL && <p className='text-red-500'>{ errors.logoURL }</p>}
+                                        <label className="block text-sm font-medium text-gray-900">Logo URL</label>
+                                        <input type="text" value={data.logoURL} onChange={(e) => setData("logoURL", e.target.value) }  
+                                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" 
+                                        placeholder='https://analogueshifts.com/logo.png'/>
                                     </div>
                                 </div>
                             </div>                            

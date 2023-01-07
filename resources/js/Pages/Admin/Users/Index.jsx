@@ -52,7 +52,7 @@ function Index({ users }) {
                                             {new Date(user.created_at).toDateString()}
                                         </td>
                                         <td className="flex justify-start items-cemter py-4 px-6 gap-3 text-base">
-                                            <a className='flex items-center underline' href={route("user", user.id)}>
+                                            <a className='flex items-center underline' href={route("user", user.username)}>
                                                 View
                                             </a>
                                             {/* <button className='flex items-center' onClick={() => deleteLearn(user.id)}>

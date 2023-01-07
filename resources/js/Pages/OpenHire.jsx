@@ -10,7 +10,7 @@ export default function OpenHire(props) {
         <Authenticated>
             <Head title="Welcome" />
 
-            <div className="home">
+            <div className="">
                 <HiresComp hires={props.hires} />
             </div>
                 
@@ -23,13 +23,15 @@ export default function OpenHire(props) {
 export function HiresComp({hires}){
 
     return(
-        <div className="grid gap-10 py-16 px-2 md:px-16">
-            <h1 className='text-4xl capitalize text-darkBlue font-semibold'>
-                Talent as a service.
-            </h1>
+        <div className="grid gap-16 py-16 px-2 md:px-16">
+            <div className='grid justify-center'>
+                <h1 className='text-4xl capitalize text-yellow-600 font-semibold'>
+                    Available jobs for you.
+                </h1>
+            </div>
             <div className="grid md:grid-cols-3 justify-center gap-5">
                 {hires.map(hire => (
-                    <div className="grid justify-center gap-2 bg-yellow-50 p-5 rounded shadow" key={hire.id}>
+                    <div className="grid gap-2 bg-white p-5 rounded shadow" key={hire.id}>
                         <div className='flex justify-between py-5 px-1'>
                             <ApplicationLogo />
                             {hire.status == '1' ? (
@@ -51,36 +53,14 @@ export function HiresComp({hires}){
                             </span>
                         </div>
                         <div className='flex gap-3 capitalize'>
-                            <h3 className='text-lg text-yellow-600 font-medium'>Location:</h3>
-                            <span className="text-lg text-zinc-700">
-                                {hire.hire_type}
-                            </span>
-                        </div>
-                        <div className='flex gap-3 capitalize'>
-                            <h3 className='text-lg text-yellow-600 font-medium'>Salary Range:</h3>
-                            <span className="text-lg text-zinc-700">
-                                {hire.range}
-                            </span>
-                        </div>
-                        <div className='flex gap-3 capitalize'>
-                            <h3 className='text-lg text-yellow-600 font-medium'>Expirience:</h3>
-                            <span className="text-lg text-zinc-700">
-                                {hire.expirience}
-                            </span>
-                        </div>
-                        <div className='flex gap-3 capitalize'>
                             <h3 className='text-lg text-yellow-600 font-medium'>Job Duration:</h3>
                             <span className="text-lg text-zinc-700">
-                                {hire.duration}
+                                {hire.description.slice(0, 100)}...
                             </span>
                         </div>
                         <div className='flex gap-2 pt-3'>
-                            <a href={route("hire.view", hire.id)} className='flex justify-center w-full text-white items-center gap-3 rounded-lg py-3 px-5 bg-black hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>
-                                <h3 className='text-lg'>View</h3>
-                                <BsFolder2Open />
-                            </a>
-                            <a href={hire.vet} target='_blank' className='flex justify-center w-full text-white items-center gap-3 rounded-lg py-3 px-5 bg-yellow-900 hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>
-                                <h3 className='text-lg'>Apply</h3>
+                            <a href={route("hire.view", hire.slug)} className='flex justify-center w-full text-white items-center gap-3 rounded-lg py-3 px-5 bg-yellow-900 hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>
+                                <h3 className='text-lg'>Proceed for job description</h3>
                                 <BsArrowRight />
                             </a>
                         </div>

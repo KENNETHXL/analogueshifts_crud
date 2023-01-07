@@ -10,8 +10,8 @@ Route::middleware(['auth', 'verified'])->prefix("hire")->name("hire.")->group(fu
     Route::get('/apply', [HireController::class, "all"])->name('apply');
     Route::get('/talents', [HireController::class, "create"])->name('talents');
     Route::post("/", [HireController::class, "store"])->name("store");
-    Route::get('/{hire}/edit', [HireController::class, "edit"])->name('edit');
+    Route::get('/{hire:slug}/edit', [HireController::class, "edit"])->name('edit');
     Route::put('/{hire}', [HireController::class, "update"])->name('update');
-    Route::get('/view/{hire:id}', [HireController::class, "show"])->name('view');
+    Route::get('/view/{hire:slug}', [HireController::class, "show"])->name('view');
     Route::delete('/{hire}', [HireController::class, "delete"])->name('delete');
 });

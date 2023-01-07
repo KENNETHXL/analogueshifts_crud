@@ -2,7 +2,7 @@
 
 function Companies() {
     return ( 
-        <div className="grid justify-center p-5 md:p-20 bg-yellow-50 space-y-10">
+        <div className="grid justify-center p-5 md:p-20 bg-white space-y-10">
             
             <p className="text-center text-2xl md:text-3xl text-yellow-500 uppercase">
                 In Collaboration with

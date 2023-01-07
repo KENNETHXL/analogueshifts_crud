@@ -1,14 +1,14 @@
 
 function Cards() {
     return ( 
-        <section id="top" className="bg-yellow-50 card-section">
+        <section id="top" className="bg-white card-section">
 
-            <div className="p-5 md:p-20 space-y-32 bg">
+            <div className="p-5 md:p-20 space-y-32 border-b-2">
                 
                 <div className="grid md:grid-cols-2 gap-9">
 
                     <div className="grid rounded-lg">
-                        <div className="h-96 w-80 md:h-[30rem] bg-zinc-300 rounded-lg w-full">
+                        <div className="h-96 md:h-[30rem] bg-zinc-300 rounded-lg w-full">
                             <img className="rounded-lg h-full w-full" src="images/team.jpg" alt=""/>
                         </div>
                     </div>

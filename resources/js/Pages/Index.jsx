@@ -15,10 +15,10 @@ export default function Welcome(props) {
             <div className="home">
                 
                 <Introduction />
-                <Companies />
                 <BuildTeam />
                 <Cards />
-                <HiresComp hires={props.hires} />
+                <Companies />
+                {/* <HiresComp hires={props.hires} /> */}
                 {/* <About/> */}
                 
             </div>

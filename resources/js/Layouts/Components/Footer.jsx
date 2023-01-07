@@ -16,12 +16,12 @@ function Footer() {
                         </h3>
                     </a>
 
-                    <div className="grid gap-3 font-semibold text-lg text-gray-500 font-sans">
+                    <div className="grid gap-3 font-semibold text-lg text-gray-100 font-sans">
                         <a href="tel:+2348155629064" target='blank'>Call: +2348155629064</a>
                         <a href="mailto:hello@analogueshifts.com" target='blank'>Mail: hello@analogueshifts.com</a>
                     </div> 
 
-                    <div className="flex gap-5 text-4xl text-zinc-500 justify-center">
+                    <div className="flex gap-5 text-4xl text-zinc-100 justify-center">
                         <a href="https://www.facebook.com/profile.php?id=100078666855898" target="blank"><FaFacebookSquare /></a>
                         <a href="https://www.instagram.com/analogueshifts_/" target="blank"><FaInstagram /></a>
                         <a href="https://twitter.com/AnalogueShifts" target="blank"><FaTwitter /></a>
@@ -61,7 +61,7 @@ function Footer() {
                 </div>
             </div>
 
-            <p className="copy text-center col-span-4 text-lg text-zinc-500 mt-10">
+            <p className="copy text-center col-span-4 text-lg text-zinc-100 mt-10">
                 &copy; {new Date().getFullYear()} | All Rights Reserved
             </p>
 
