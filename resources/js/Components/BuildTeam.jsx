@@ -13,141 +13,144 @@ function BuildTeam() {
     return ( 
         <div id='talent' className="build-team">
 
-            <div className="cards">
-            {/* {[1,2,3].map(el => (
-                <div key={el}></div>
-            ))} */}
-                <div className='card'>
-                    <img src='/images/1.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Product Managers
-                    </h3>
-                    <p className="details">
-                        Highly skilled product managers trained in the development and release of products. 
-                        That is, create and manage the product roadmap, 
-                        track product performance, and provide feedback to stakeholders.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/2.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Project Managers 
-                    </h3>
-                    <p className="details">
-                        Hire skilled professionals who organize, plan, and execute projects within 
-                        constraints like budgets and schedules. Also, lead entire teams, define project goals, 
-                        communicate with stakeholders, and see a project through to its closure.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/3.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        UI/UX
-                    </h3>
-                    <p className="details">
-                        Hire skilled professionals who can identify new opportunities to create better user experiences. 
-                        Aesthetically pleasing branding strategies help them effectively reach more customers. 
-                        They also ensure that the end-to-end product or service journey meets desired outcomes.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/4.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Data analysts
-                    </h3>
-                    <p className="details">
-                        Hire highly skilled data analysts trained in collecting and interpreting data, analysing results, 
-                        reporting the results back to the relevant stakeholders.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/5.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Developers 
-                    </h3>
-                    <p className="details">
-                        Hire skilled developers trained to build and create software and applications. In addition, 
-                        our professionals can debug and execute a software application's source code. 
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/6.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        DevOps Engineers
-                    </h3>
-                    <p className="details">
-                        Hire skilled professionals trained to oversee code release and combine an understanding of both engineering and coding. 
-                        Our professionals can create and implement systems software, 
-                        analyze data, and improve existing ones.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/7.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Business Analysts
-                    </h3>
-                    <p className="details">
-                        Hire top business analysts trained in the how-to guide of improving processes, 
-                        products, and services through data analysis
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/8.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Virtual Assistants
-                    </h3>
-                    <p className="details">
-                        Hire highly skilled virtual assistants that can perform tasks 
-                        that are difficult or time-consuming and provide a level of convenience and flexibility. Schedule appointments, 
-                        travel arrangements, manage email and social media accounts and provide customer service.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
-                <div className='card'>
-                    <img src='/images/9.jpg' className='w-full h-60 rounded-md' />
-                    <h3 className="title">
-                        Social media managers
-                    </h3>
-                    <p className="details">
-                        Hire top social media managers that can represent your company globally through your social channels. 
-                        They are trained in the right tips for building a brand voice and online presence.
-                    </p>
-                    <a href={route('hire.talents')} className='btn-lg'>
-                        <span>Find Top Talents</span>
-                        <BsArrowRight />
-                    </a>
-                </div>  
+            <div className='grid gap-3 bg-black text-white justify-center text-xl md:text-3xl'>
+                <span className='flex justify-center pt-20'>What we are known for</span>
+                <div className="cards">
+                {/* {[1,2,3].map(el => (
+                    <div key={el}></div>
+                ))} */}
+                    <div className='card'>
+                        <img src='/images/1.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Product Managers
+                        </h3>
+                        <p className="details">
+                            Highly skilled product managers trained in the development and release of products. 
+                            That is, create and manage the product roadmap, 
+                            track product performance, and provide feedback to stakeholders.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/2.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Project Managers 
+                        </h3>
+                        <p className="details">
+                            Hire skilled professionals who organize, plan, and execute projects within 
+                            constraints like budgets and schedules. Also, lead entire teams, define project goals, 
+                            communicate with stakeholders, and see a project through to its closure.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/3.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            UI/UX
+                        </h3>
+                        <p className="details">
+                            Hire skilled professionals who can identify new opportunities to create better user experiences. 
+                            Aesthetically pleasing branding strategies help them effectively reach more customers. 
+                            They also ensure that the end-to-end product or service journey meets desired outcomes.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/4.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Data analysts
+                        </h3>
+                        <p className="details">
+                            Hire highly skilled data analysts trained in collecting and interpreting data, analysing results, 
+                            reporting the results back to the relevant stakeholders.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/5.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Developers 
+                        </h3>
+                        <p className="details">
+                            Hire skilled developers trained to build and create software and applications. In addition, 
+                            our professionals can debug and execute a software application's source code. 
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/6.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            DevOps Engineers
+                        </h3>
+                        <p className="details">
+                            Hire skilled professionals trained to oversee code release and combine an understanding of both engineering and coding. 
+                            Our professionals can create and implement systems software, 
+                            analyze data, and improve existing ones.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/7.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Business Analysts
+                        </h3>
+                        <p className="details">
+                            Hire top business analysts trained in the how-to guide of improving processes, 
+                            products, and services through data analysis
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/8.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Virtual Assistants
+                        </h3>
+                        <p className="details">
+                            Hire highly skilled virtual assistants that can perform tasks 
+                            that are difficult or time-consuming and provide a level of convenience and flexibility. Schedule appointments, 
+                            travel arrangements, manage email and social media accounts and provide customer service.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                    <div className='card'>
+                        <img src='/images/9.jpg' className='w-full h-60 rounded-md' />
+                        <h3 className="title">
+                            Social media managers
+                        </h3>
+                        <p className="details">
+                            Hire top social media managers that can represent your company globally through your social channels. 
+                            They are trained in the right tips for building a brand voice and online presence.
+                        </p>
+                        <a href={route('hire.talents')} className='btn-lg'>
+                            <span>Find Top Talents</span>
+                            <BsArrowRight />
+                        </a>
+                    </div>  
+                </div>
             </div>
 
 
