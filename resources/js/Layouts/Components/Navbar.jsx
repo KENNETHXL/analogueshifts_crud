@@ -33,7 +33,7 @@ function Navbar({Guest}) {
                         <Link href={route('payment.package')}  className="find py-3 text-gray-500">Premium Plans</Link>
                         <Link href={route('profile')}  className="find py-3 text-gray-500">Profile</Link>
                         <Link href={route('hire.apply')}  className="find py-3 text-gray-500">Jobs</Link>
-                        <Link href={route('construction')} className='bg-black text-white px-9 py-3 rounded-lg hover:text-yellow-100 hover:ring-2 ring-black'>Contact Us</Link>
+                        <Link href={route('construction')} className='bg-black text-white px-9 py-3 rounded-lg hover:bg-transparent hover:text-gray-500 hover:ring-2 ring-black'>Contact Us</Link>
                     </div>
                 </div>
 

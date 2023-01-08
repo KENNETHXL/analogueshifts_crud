@@ -44,7 +44,7 @@ function Introduction() {
                 </div>
                 <div className='grid justify-center md:grid-cols-2 gap-5'>
                     <div className='grid justify-center items-center rounded p-2 cursor-pointer relative'>
-                        <img src='images/1.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
+                        <img src='images/a1.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
                         <div className=' bg-transparent bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg flex justify-center items-center p-3 w-72 font-bold absolute inset-x-9 bottom-5'>
                             <span className='flex justify-center text-sm text-white'>
                                 We are here to understand exactly what kind
@@ -56,7 +56,7 @@ function Introduction() {
                     </div>
 
                     <div className='grid justify-center items-center rounded p-2 cursor-pointer relative'>
-                        <img src='images/2.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
+                        <img src='images/a2.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
                         <div className=' bg-transparent bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg flex justify-center items-center p-3 w-72 font-bold absolute inset-x-9 bottom-5'>
                             <span className='flex justify-center text-sm text-white'>
                                 With a focus on cultural fit, talent acquisition
@@ -67,7 +67,7 @@ function Introduction() {
                     </div>
 
                     <div className='grid justify-center items-center rounded p-2 cursor-pointer relative'>
-                        <img src='images/3.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
+                        <img src='images/a3.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
                         <div className=' bg-transparent bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg flex justify-center items-center p-3 w-72 font-bold absolute inset-x-9 bottom-5'>
                             <span className='flex justify-center text-sm text-white'>
                                 We believe in employees who are passionate
@@ -78,7 +78,7 @@ function Introduction() {
                     </div>
 
                     <div className='grid justify-center items-center rounded p-2 cursor-pointer relative'>
-                        <img src='images/4.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
+                        <img src='images/a4.jpg' className='grid justify-center items-center bg-gray-300 h-80 w-80 rounded-lg' alt='' />
                         <div className=' bg-transparent bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg flex justify-center items-center p-3 w-72 font-bold absolute inset-x-9 bottom-5'>
                             <span className='flex justify-center text-sm text-white'>
                                 We are here to understand exactly what kind
