@@ -17,6 +17,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('contact', function () {
+    return Inertia::render('Contact');
+})->name('contact');
+
 Route::get('about', function () {
     return Inertia::render('About');
 })->name('about');

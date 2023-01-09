@@ -6,7 +6,7 @@ function Introduction() {
     
     return ( 
         // bg-[url('/images/isolated.jpg')]
-        <header className="grid justify-center gap-9 text-black  md:bg-as px-5 py-16 md:py-20">
+        <header className="grid justify-center gap-9 text-black bg-as px-5 py-16 md:py-20">
             <div className='grid justify-between md:grid-cols-2 gap-3'>
                 <div className='md:p-9'>
                     <div className='grid gap-2 items-center'> 

@@ -6,7 +6,7 @@ export default function Authenticated({ header, children }) {
 
     const auth = usePage().props.auth;
     return (
-        <div className="min-h-screen bg-gray-100 py-20">
+        <div className="min-h-screen bg-yellow-50 py-20">
 
           
             <Navbar />

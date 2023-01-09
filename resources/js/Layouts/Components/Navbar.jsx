@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import NavLink from '@/Components/Utils/NavLink';
 import { Link, usePage } from '@inertiajs/inertia-react';
+import Dropdown from '@/Components/Dropdown';
+import { IoIosArrowDown } from 'react-icons/io'
 import {GrClose} from 'react-icons/gr';
 import {MdMenu} from 'react-icons/md';
 import {BsLock, BsUnlock} from 'react-icons/bs'
@@ -31,9 +33,28 @@ function Navbar({Guest}) {
                         <Link href={route('blogs')}  className="find py-3 text-gray-500">News</Link>
                         <Link href={route('hire.talents')} className="find py-3 text-gray-500">Hire Talent</Link>
                         <Link href={route('payment.package')}  className="find py-3 text-gray-500">Premium Plans</Link>
-                        <Link href={route('profile')}  className="find py-3 text-gray-500">Profile</Link>
+                        <Dropdown>
+                            <Dropdown.Trigger>
+                                <button
+                                    type="button"
+                                    className="inline-flex items-center find py-3 text-gray-500"
+                                >
+                                    <span className=''>Profile</span>
+
+                                    <IoIosArrowDown />
+                                </button>
+                            </Dropdown.Trigger>
+                            <Dropdown.Content>
+                                <Dropdown.Link href={route('dashboard')}>
+                                    Dashboard
+                                </Dropdown.Link>
+                                <Dropdown.Link href={route('profile')}>
+                                    Profile
+                                </Dropdown.Link>
+                            </Dropdown.Content>
+                        </Dropdown>
                         <Link href={route('hire.apply')}  className="find py-3 text-gray-500">Jobs</Link>
-                        <Link href={route('construction')} className='bg-black text-white px-9 py-3 rounded-lg hover:bg-transparent hover:text-gray-500 hover:ring-2 ring-black'>Contact Us</Link>
+                        <Link href={route('contact')} className='bg-black text-white px-9 py-3 rounded-lg hover:bg-transparent hover:text-gray-500 hover:ring-2 ring-black'>Contact Us</Link>
                     </div>
                 </div>
 
@@ -54,14 +75,6 @@ function Navbar({Guest}) {
                 </div>
 
                 <div className="nav-menu">
-                    <NavLink  href={route('home')} active={route().current('home')}  className="find">
-                        <img src="/logo.png" className="w-12 h-12" alt="" />
-                        <h3 className="md:text-xl text-lg font-bold uppercase text-zinc-600 leading-5">
-                            <span className="tracking-widest text-yellow-400">Analogue</span>
-                            <br />
-                            <span className="tracking-[1rem]">Shifts</span>
-                        </h3>
-                    </NavLink>
 
                     <NavLink href={route('dashboard')} active={route().current('dashboard')}>Dashboard</NavLink>
                     <NavLink href={route('hire.apply')} active={route().current('hire.apply')}>talent as a service</NavLink>

@@ -7,7 +7,7 @@ export default function All({ header, children }) {
 
     const auth = usePage().props.auth;
     return (
-        <div className="min-h-screen bg-gray-100 pt-20">
+        <div className="min-h-screen bg-yellow-50 pt-20">
 
             <Navbar />
            
