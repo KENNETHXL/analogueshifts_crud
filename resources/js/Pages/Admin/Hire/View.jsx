@@ -10,6 +10,9 @@ export default function Hire({hire}) {
     return (
         <Authenticated>
             <Head title="Hire" />
+            <div className='w-full h-72 md:h-[350px]'>
+                <img src='/images/18.jpg' className='w-full h-full' alt='img'/>
+            </div>
             <div className='grid py-16 px-3 md:px-16 w-full'>
                 <div className="grid gap-5 bg-yellow-50 p-3 md:p-5 rounded shadow w-full" key={hire.id}>
                     <div className='flex justify-between py-5 px-1'>
@@ -59,11 +62,11 @@ export default function Hire({hire}) {
                             {hire.duration}
                         </span>
                     </div>
-                    <div className='grid gap-3 capitalize'>
-                        <span className='text-lg text-yellow-600 font-medium'>Description:</span>
-                        <span className="text-lg text-zinc-700">
+                    <div className='flex flex-col gap-3'>
+                        <span className='text-lg capitalize text-yellow-600 font-medium'>Description:</span>
+                        <p className="text-lg text-zinc-700 text-clip overflow-hidden">
                             {hire.description}
-                        </span>
+                        </p>
                     </div> 
                     <div className='flex justify-end md:justify-end gap-3 pt-3'>
                         <a href={hire.vet} target='_blank' className='flex justify-center text-white items-center gap-3 rounded-lg py-3 px-5 bg-yellow-900 hover:bg-transparent hover:text-yellow-900 hover:ring-2 ring-black'>

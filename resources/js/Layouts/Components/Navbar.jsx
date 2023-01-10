@@ -60,7 +60,7 @@ function Navbar({Guest}) {
 
                 <div className="flex gap-3 items-center md:hidden">
                 
-                    {auth ? (
+                    {/* {auth ? (
                         <Link className="border rounded-full p-3 text-gray-700 hover:text-red-500" href={route('logout')} method="post" as="button">
                             <BsLock className="text-xl"/>
                         </Link>
@@ -68,7 +68,8 @@ function Navbar({Guest}) {
                         <Link href={route('login')} className="border rounded-full p-3 text-gray-700 hover:text-green-500">
                             <BsUnlock className="text-xl"/>
                         </Link>
-                    )}
+                    )} */}
+
                     <button onClick={() => setOpen(!open)} className="close-btn">
                         {open ? <GrClose /> : <MdMenu />}
                     </button>
@@ -77,11 +78,11 @@ function Navbar({Guest}) {
                 <div className="nav-menu">
 
                     <NavLink href={route('dashboard')} active={route().current('dashboard')}>Dashboard</NavLink>
-                    <NavLink href={route('hire.apply')} active={route().current('hire.apply')}>talent as a service</NavLink>
-                    <NavLink href={route('blogs')} active={route().current('blogs')}>news</NavLink>
                     <NavLink href={route('about')} active={route().current('about')}>about</NavLink>
-                    <NavLink href={route('learn.all')} active={route().current('learn.all')}>Learn</NavLink>
+                    <NavLink href={route('hire.apply')} active={route().current('hire.apply')}>jobs</NavLink>
+                    <NavLink href={route('blogs')} active={route().current('blogs')}>news</NavLink>
                     <NavLink href={route('construction')} active={route().current('construction')}>vet your talent</NavLink>
+                    <NavLink href={route('contact')} active={route().current('contact')}>contact</NavLink>
 
                     <NavLink href={route('hire.talents')} active={route().current('hire.talents')} className="find">
                         hire talent

@@ -10,18 +10,19 @@ export default class About extends Component {
           </div>
           <div className='flex flex-col gap-10 md:p-5 md:items-end md:absolute inset-y-20'>
             <div className='bg-white grid gap-5 md:w-3/5 rounded-lg shadow-lg p-4 md:p-9'>
-              <h4 className='text-3xl text-yellow-500'>About Us</h4>
+              <h4 className='text-3xl text-yellow-500'>What we do</h4>
               <span className='text-2xl text-gray-700'>
-                AnalogueShifts is a Project Management and Talent Acquisition Company. 
-                Our mission is to solve the problem of cost for Startups and Large scale companies abroad by sourcing the best talents for clients. 
-                We are equipped with the most talented work force across the globe and we are ready to work 24/7.
+                We are a dynamic and motivated team of people who share the same goal to find  the right talent for your company.    
+                We offer high quality services and will help you with anything we can from the recruitment stage up until you have made a final decision. 
+                We are here to understand exactly what kind of person you want,
+                to tailor our service to best fit your needs and deliver results for businesses in all industries.
               </span>
             </div>
           </div>
         </div>
 
         <div className='grid gap-16 px-3 md:px-9 py-28'>
-          <h3 className='flex justify-center text-2xl md:text-3xl text-yellow-700 font-bold'>Our Team</h3>
+          <h3 className='flex justify-center text-2xl md:text-3xl text-black font-bold'>Our Team</h3>
           <div className='grid justify-center'>
             <div className='grid justify-center md:grid-cols-3 gap-5'>
               <div className='grid justify-center rounded p-2 cursor-pointer relative'>

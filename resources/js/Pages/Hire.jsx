@@ -31,9 +31,12 @@ export default function Hire(props) {
     return (
         <Authenticated>
             <Head title="Hire" />
+            <div className='w-full h-72 md:h-[350px]'>
+                <img src='/images/18.jpg' className='w-full h-full' alt='img'/>
+            </div>
             <div className="home py-16 px-2">
 
-                <form onSubmit={submit} className='grid gap-3 bg-white p-3 md:p-6 m-2 md:m-3 rounded-lg'>
+                <form onSubmit={submit} className='grid gap-3 bg-yellow-50 p-3 md:p-6 m-2 md:m-3 rounded-lg'>
 
                     <div className='flex justify-between gap-3'>
                         <select value={data.display} onChange={(e) => setData("display", e.target.value) }>
@@ -47,7 +50,7 @@ export default function Hire(props) {
 
                     <div className='grid md:grid-cols-3 gap-5'>
                        
-                        <div className="grid md:col-span-1 p-3 bg-white rounded-lg border border-gray-200 shadow-md">
+                        <div className="grid md:col-span-1 p-3 bg-yellow-50 rounded-lg border border-gray-200 shadow-md">
                             <div>
                                 <label className="block mb-3 text-sm font-medium text-gray-900">Contacts -Required (*)</label>
                                 <div className='grid gap-3'>
@@ -95,7 +98,7 @@ export default function Hire(props) {
                             </div>                            
                         </div>
 
-                        <div className="grid md:col-span-2 p-3 bg-white rounded-lg border border-gray-200 shadow-md relative"> 
+                        <div className="grid md:col-span-2 p-3 bg-yellow-50 rounded-lg border border-gray-200 shadow-md relative"> 
                             <div className='grid gap-5'>
                                 <label className="block mb-3 text-sm font-medium text-gray-900">Hire Details -Required (*)</label>
                                 

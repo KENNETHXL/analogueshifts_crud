@@ -3,13 +3,14 @@ import { BsCheckCircleFill } from 'react-icons/bs'
   
   function Weekly(props) {
     return (
-        <div className="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8">
+        <div className="grid gap-5 p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8">
             <h5 className="mb-4 text-xl font-medium text-gray-500">Weekly package</h5>
             <div className="flex items-baseline text-gray-900">
                 <span className="text-3xl font-semibold">$</span>
                 <span className="text-5xl font-extrabold tracking-tight">10</span>
                 <span className="ml-1 text-xl font-normal text-gray-500">/Week</span>
             </div>
+            <span>A detailed wireframe kit made of comprehensive components.</span>
             <ul role="list" className="my-7 space-y-5">
                 <li className="flex space-x-3">
                     <BsCheckCircleFill className="flex-shrink-0 w-4 h-4 text-yellow-600"/>
