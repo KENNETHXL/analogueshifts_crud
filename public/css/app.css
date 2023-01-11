@@ -3712,6 +3712,18 @@ textarea.form-control.is-invalid {
   bottom: 0px;
   left: 0px;
 }
+.inset-3 {
+  top: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.75rem;
+}
+.-inset-3 {
+  top: -0.75rem;
+  right: -0.75rem;
+  bottom: -0.75rem;
+  left: -0.75rem;
+}
 .inset-y-20 {
   top: 5rem;
   bottom: 5rem;
@@ -3727,6 +3739,34 @@ textarea.form-control.is-invalid {
 .inset-x-9 {
   left: 2.25rem;
   right: 2.25rem;
+}
+.inset-y-3 {
+  top: 0.75rem;
+  bottom: 0.75rem;
+}
+.inset-y-2 {
+  top: 0.5rem;
+  bottom: 0.5rem;
+}
+.inset-x-2 {
+  left: 0.5rem;
+  right: 0.5rem;
+}
+.inset-x-16 {
+  left: 4rem;
+  right: 4rem;
+}
+.inset-x-11 {
+  left: 2.75rem;
+  right: 2.75rem;
+}
+.inset-x-7 {
+  left: 1.75rem;
+  right: 1.75rem;
+}
+.inset-x-6 {
+  left: 1.5rem;
+  right: 1.5rem;
 }
 .top-0 {
   top: 0px;
@@ -5211,6 +5251,16 @@ textarea.form-control.is-invalid {
     right: 0px;
     bottom: 0px;
     left: 0px;
+  }
+
+  .md\:inset-x-6 {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .md\:inset-x-9 {
+    left: 2.25rem;
+    right: 2.25rem;
   }
 
   .md\:col-span-1 {

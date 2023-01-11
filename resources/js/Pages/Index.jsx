@@ -17,7 +17,7 @@ export default function Welcome(props) {
                 <Introduction />
                 <BuildTeam />
                 <Cards />
-                <Companies />
+                {/* <Companies /> */}
                 {/* <HiresComp hires={props.hires} /> */}
                 {/* <About/> */}
                 

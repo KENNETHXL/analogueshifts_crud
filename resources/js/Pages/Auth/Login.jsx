@@ -6,6 +6,7 @@ import InputLabel from '@/Components/Utils/InputLabel';
 import PrimaryButton from '@/Components/Utils/PrimaryButton';
 import TextInput from '@/Components/Utils/TextInput';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import ShowPassword from '@/Components/ShowPassword';
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -56,19 +57,24 @@ export default function Login({ status, canResetPassword }) {
                 <div className="mt-4">
                     <InputLabel forInput="password" value="Password" />
 
-                    <TextInput
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        handleChange={onHandleChange}
-                    />
+                    <div className="mt-1 block w-full relative">
+                        <TextInput
+                            type="password"
+                            name="password"
+                            id="password"
+                            value={data.password}
+                            className="block w-full"
+                            autoComplete="current-password"
+                            handleChange={onHandleChange}
+                        />
+                        
+                        <ShowPassword />
+                    </div>
 
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="flex justify-between gap-3 block mt-4">
+                <div className="flex justify-between gap-3 mt-4">
                     <label className="flex items-center">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 

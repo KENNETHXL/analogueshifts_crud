@@ -5,6 +5,7 @@ import InputLabel from '@/Components/Utils/InputLabel';
 import PrimaryButton from '@/Components/Utils/PrimaryButton';
 import TextInput from '@/Components/Utils/TextInput';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import ShowPassword, { ShowPassword2 } from '@/Components/ShowPassword';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -70,31 +71,37 @@ export default function Register() {
 
                 <div className="mt-4">
                     <InputLabel forInput="password" value="Password" />
-
-                    <TextInput
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        handleChange={onHandleChange}
-                        required
-                    />
+                    <div className="mt-1 block w-full relative">
+                        <TextInput
+                            type="password"
+                            name="password"
+                            id="password"
+                            value={data.password}
+                            className="block w-full"
+                            autoComplete="current-password"
+                            handleChange={onHandleChange}
+                        />
+                        <ShowPassword />
+                    </div>
 
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
                     <InputLabel forInput="password_confirmation" value="Confirm Password" />
-
-                    <TextInput
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        handleChange={onHandleChange}
-                        required
-                    />
+                    
+                    <div className="mt-1 block w-full relative">
+                        <TextInput
+                            type="password"
+                            name="password_confirmation"
+                            id="password2"                 
+                            value={data.password_confirmation}
+                            className="block w-full"
+                            autoComplete="current-password"
+                            handleChange={onHandleChange}
+                        />
+                        <ShowPassword2 />
+                    </div>
 
                     <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>
